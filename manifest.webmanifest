@@ -1,0 +1,26 @@
+{
+ "name": "Thelearner.arts28 — HSC স্টাডি রুটিন",
+ "short_name": "Thelearner",
+ "description": "HSC মানবিক বিভাগের স্টাডি রুটিন",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "any",
+ "background_color": "#000000",
+ "theme_color": "#2f6bff",
+ "lang": "bn",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any maskable"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}
