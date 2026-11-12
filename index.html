@@ -709,7 +709,7 @@ loadShared();
 const SK=['al','bm','cc','cm','en','ex','fc','fs','lf','mh','mq','nt','p','rd','td'],C=()=>{const c=window.CLOUD;return c&&c.url&&c.key?c:null},LS=localStorage,gj=(k,d)=>{try{return JSON.parse(LS.getItem(k))??d}catch{return d}};
 let A=gj('acc',null),REC=null,pt=0,RF=null,busy=false,MODE='login',lang=LS.getItem('lang')==='bn'?'bn':'en';
 const cs=v=>JSON.stringify(v,(k,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a<b?-1:a>b?1:0)):x);
-window.__chg=k=>{if(!SK.includes(k))return;const kt=gj('kt',{});kt[k]=Date.now();LS.setItem('kt',JSON.stringify(kt));LS.setItem('dirty','1');if(A)sched()};
+window.__chg=k=>{if(!SK.includes(k))return;const kt=gj('kt',{});kt[k]=Date.now();LS.setItem('kt',JSON.stringify(kt));LS.setItem('dirty',String(Date.now())+Math.random());if(A)setTimeout(tick,300)};
 const TX={en:{wL:'Welcome back',wS:'Create your account',sL:'Log in to continue to Thelearner.arts28',sS:'Sign up to keep your routines, notes and questions on every device.',login:'Log in',signup:'Sign up',email:'Email address',pw:'Password',pwNew:'Password (at least 6 characters)',forgot:'Forgot password?',create:'Create account',setT:'Set a new password',setS:'Choose a new password for your account.',newpw:'New password (at least 6 characters)',upd:'Update password',wait:'Please wait…',
  okIn:'✓ Logged in and synced.',okSync:'✓ Sync complete.',okConf:'✓ Account created. Open the confirmation link we emailed you, then log in.',okRes:'✓ Password reset link sent to your email.',okPw:'✓ Password updated. Please log in.',
  eEmpty:'Please enter your email and password.',eEmail:'Enter your email first.',ePw:'Password must be at least 6 characters.',eCred:'Incorrect email or password.',eExists:'An account with this email already exists. Please log in.',eBad:'That email address is not valid.',eConf:'Email not confirmed yet. Check your inbox.',eRate:'Too many attempts. Please try again in a little while.',eSess:'Your session has ended. Please log in again.',eNet:'Check your internet connection.',eTab:'The database table is missing (run supabase.sql).',
@@ -736,10 +736,20 @@ function merge(a,b){const m={};new Set([...Object.keys(a),...Object.keys(b)]).fo
  else if(k==='mq'&&Array.isArray(x.v)&&Array.isArray(y.v)&&(!x.t||!y.t)){const s=new Set(),v=[];[...y.v,...x.v].forEach(q=>{const id=q.s+'|'+q.c+'|'+q.q;if(!s.has(id)){s.add(id);v.push(q)}});m[k]={v,t:Date.now()}}
  else m[k]=x.t>y.t?x:y});return m}
 function applyL(m,l){let ch=false;const kt=gj('kt',{});Object.keys(m).forEach(k=>{if(cs(m[k].v)!==cs(l[k]&&l[k].v)){LS.setItem(k,JSON.stringify(m[k].v));ch=true}kt[k]=m[k].t});LS.setItem('kt',JSON.stringify(kt));return ch}
-async function pull(){const r=await api('/rest/v1/user_data?select=data&user_id=eq.'+A.uid,{},true);return r&&r[0]&&r[0].data&&r[0].data.keys||{}}
-const push=m=>api('/rest/v1/user_data?on_conflict=user_id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify({user_id:A.uid,data:{keys:m},updated_at:new Date().toISOString()})},true);
-async function doSync(apply){const c=await pull(),l=snap(),m=merge(l,c);let ch=false;if(apply)ch=applyL(m,l);if(cs(m)!==cs(c))await push(m);LS.removeItem('dirty');LS.setItem('lts',String(Date.now()));return ch}
-function sched(){if(pt)return;pt=setTimeout(async()=>{pt=0;try{await doSync(false);ui()}catch{ui()}},4000)}
+async function pull(){const r=await api('/rest/v1/user_data?select=data,updated_at&user_id=eq.'+A.uid,{},true);return r&&r[0]?{keys:r[0].data&&r[0].data.keys||{},ts:Date.parse(r[0].updated_at)||0}:{keys:{},ts:0}}
+async function push(m){const now=Date.now();await api('/rest/v1/user_data?on_conflict=user_id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify({user_id:A.uid,data:{keys:m},updated_at:new Date(now).toISOString()})},true);return now}
+async function doSync(apply){const d0=LS.getItem('dirty'),r=await pull(),c=r.keys,l=snap(),m=merge(l,c);let ch=false,ts=r.ts;if(apply)ch=applyL(m,l);if(cs(m)!==cs(c))ts=await push(m);LS.setItem('rts',String(ts));if(LS.getItem('dirty')===d0)LS.removeItem('dirty');LS.setItem('lts',String(Date.now()));return ch}
+const SYNC_MS=1000;let tb=false,bo=0,lastAct=Date.now()-5000;
+['keydown','pointerdown','touchstart','input','scroll'].forEach(ev=>document.addEventListener(ev,()=>{lastAct=Date.now()},{passive:true}));
+const idle=()=>{const e=document.activeElement,n=e&&e.tagName;return!(n==='INPUT'||n==='TEXTAREA'||(e&&e.isContentEditable))&&Date.now()-lastAct>2500&&!(typeof Q!=='undefined'&&Q)};
+const stx=()=>{const ts=+LS.getItem('lts')||0,d=LS.getItem('dirty');return d?t('pend'):ts?t('last')+new Date(ts).toLocaleString(lang==='bn'?'bn-BD':'en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit',day:'numeric',month:'short'}):t('never')};
+function stat(){const e=$$('cl-st');if(!e||!A)return;e.textContent=stx();if(e.parentNode&&e.parentNode.classList)e.parentNode.classList.toggle('w',!!LS.getItem('dirty'))}
+async function tick(){if(tb||!A||!C()||document.hidden||bo>Date.now()||(typeof navigator!=='undefined'&&navigator.onLine===false))return;tb=true;
+ try{if(LS.getItem('dirty')){await doSync(false);stat()}
+  else{const r=await api('/rest/v1/user_data?select=updated_at&user_id=eq.'+A.uid,{},true),ts=r&&r[0]?Date.parse(r[0].updated_at)||0:0;
+   if(ts&&ts!==(+LS.getItem('rts')||0)){if(idle()){const ch=await doSync(true);stat();const lr=+sessionStorage.getItem('rlt')||0;if(ch&&Date.now()-lr>3000){sessionStorage.setItem('rlt',String(Date.now()));location.reload()}}}
+   else{LS.setItem('lts',String(Date.now()));stat()}}
+  bo=0}catch{bo=Date.now()+5000}finally{tb=false}}
 function startSync(){if(!A||!C())return Promise.resolve();return doSync(true).then(ch=>{if(ch&&!sessionStorage.getItem('rl')){sessionStorage.setItem('rl','1');location.reload()}else sessionStorage.removeItem('rl');ui()}).catch(()=>ui())}
 function out(erase){A=null;['acc','dirty','lts'].forEach(k=>LS.removeItem(k));if(erase){SK.concat('kt').forEach(k=>LS.removeItem(k));location.reload()}else ui()}
 const $$=id=>document.getElementById(id),setM=x=>{const e=$$('cl-m');if(e){e.textContent=x;e.style.color=x[0]==='⚠'?'#e11d48':x[0]==='✓'?'#059669':''}};
@@ -752,9 +762,9 @@ function ui(){const b=$$('acb'),g=$$('gb');if(!b)return;setLock();applyLang();co
  if(!C()){b.innerHTML=`<div class="g acx" style="--c:#f59e0b;text-align:center;padding:26px 18px"><div style="font-size:2.6rem">🔐</div><div style="display:flex;justify-content:center;margin:8px 0">${pill()}</div><h3>${t('nc')}</h3><p class="mut">${t('ncB')}</p></div>`;return}
  if(A){if(g)g.innerHTML='';const ts=+LS.getItem('lts')||0,d=LS.getItem('dirty'),loc=lang==='bn'?'bn-BD':'en-GB',nm0=A.email.split('@')[0].replace(/[._-]+/g,' ').trim(),nm=nm0.split(' ').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' ').slice(0,20)||'friend',hr=new Date().getHours(),gr=hr>=5&&hr<12?t('gm'):hr>=12&&hr<17?t('ga'):hr>=17&&hr<22?t('ge'):t('gh'),
   cnt=k=>{const v=gj(k,null);return Array.isArray(v)?v.length:v&&typeof v==='object'?Object.values(v).filter(x=>x!==''&&x!=null&&!(Array.isArray(x)&&!x.length)).length:0},fm=n=>n.toLocaleString(lang==='bn'?'bn-BD':'en-US'),
-  st=d?t('pend'):ts?t('last')+new Date(ts).toLocaleString(loc,{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'}):t('never'),
+  st=stx(),
   tiles=[['📝',cnt('mq'),'stQ','#2f6bff','#e4edff'],['🗒️',cnt('nt'),'stN','#06b6d4','#dff7fc'],['🎯',cnt('mh'),'stM','#f472b6','#ffe5f1'],['⏰',cnt('al'),'stA','#f59e0b','#fff1d1']];
-  b.innerHTML=`<div class="acx"><div class="ahero"><div class="tp">${pill()}</div><div class="row"><div class="av">${esc(A.email.charAt(0).toUpperCase())}</div><div><div class="hi">${gr}, ${esc(nm)} 👋</div><div class="em">${esc(A.email)}</div><span class="sy${d?' w':''}"><i></i>${st}</span></div></div></div>
+  b.innerHTML=`<div class="acx"><div class="ahero"><div class="tp">${pill()}</div><div class="row"><div class="av">${esc(A.email.charAt(0).toUpperCase())}</div><div><div class="hi">${gr}, ${esc(nm)} 👋</div><div class="em">${esc(A.email)}</div><span class="sy${d?' w':''}"><i></i><em id="cl-st" style="font-style:normal">${st}</em></span></div></div></div>
 <div class="stats">${tiles.map((x,i)=>`<div class="stl" style="--c:${x[3]};--c2:${x[4]};animation-delay:${i*.07}s"><div class="ic">${x[0]}</div><b data-n="${x[1]}">${fm(x[1])}</b><span>${t(x[2])}</span></div>`).join('')}</div>
 <div class="shd">${t('sh')}</div><div class="chs">${t('chs').split('|').map(x=>`<span>${x}</span>`).join('')}</div>
 <div class="acts"><button id="cl-sync"><span class="ri">↻</span>${t('syncNow')}</button><button class="o" id="cl-out">${t('out')}</button><button class="dg" id="cl-outx">${t('outx')}</button></div><p class="mut" id="cl-m" style="margin-top:10px"></p></div>`;
@@ -779,9 +789,9 @@ async function onClick(e){const el=e.target&&e.target.closest?e.target.closest('
  }catch(err){setM('⚠ '+emsg(err))}finally{busy=false}}
 try{const hp=new URLSearchParams(location.hash.slice(1));if(hp.get('type')==='recovery'&&hp.get('access_token')){REC={at:hp.get('access_token')};location.hash='#account'}}catch{}
 const b0=$$('acb'),g0=$$('gb');if(b0)b0.addEventListener('click',onClick);if(g0){g0.addEventListener('click',onClick);g0.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();onClick({target:$$('cl-login')||$$('cl-sign')||$$('cl-setpw')})}})}
-document.addEventListener('visibilitychange',()=>{if(!document.hidden&&A&&Date.now()-(+LS.getItem('lts')||0)>60000)startSync()});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&A)tick()});setInterval(tick,SYNC_MS);
 window.addEventListener&&window.addEventListener('online',()=>{if(A)startSync()});
-window.__cl={login,doSync,startSync,out,snap,merge,onClick};
+window.__cl={login,doSync,startSync,out,snap,merge,onClick,tick};
 try{const mm=document.getElementById('m'),bgb=document.getElementById('bg');if(mm&&bgb&&window.MutationObserver)new MutationObserver(()=>bgb.setAttribute('aria-expanded',String(mm.classList.contains('on')))).observe(mm,{attributes:true,attributeFilter:['class']})}catch{}
 ui();startSync();
 })();
