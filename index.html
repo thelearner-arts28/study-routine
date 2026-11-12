@@ -166,7 +166,7 @@ td.cur{outline:0;background:#fff3c4!important;animation:pls 1.6s ease-in-out inf
 .cmh2{padding:0 14px 12px;color:#dc2626;font-size:.8rem;line-height:1.6}
 #cs button{background:#fff;color:var(--bl);border:2px solid var(--bl)}
 #cs button.on{background:linear-gradient(135deg,#2f6bff,#ec4899);color:#fff;border-color:transparent}
-</style>
+.ha .an{visibility:hidden}.qh3{margin:14px 0 6px;color:var(--cy)}.qi{padding:8px 0;border-bottom:1px solid var(--bd)}</style>
 </head>
 <body>
 <nav><div class="w"><a class="logo hd" href="#home"><span class="lg" style="width:36px;height:36px;border:2px solid #fff"></span>Thelearner.arts28</a><button id="bg" aria-label="মেনু" aria-expanded="false">মেনু</button>
@@ -237,10 +237,10 @@ td.cur{outline:0;background:#fff3c4!important;animation:pls 1.6s ease-in-out inf
 <p class="mut" id="cwarn" style="font-size:.85rem;color:#b45309;display:none">২০২৬ সালের সরকারি ছুটির তালিকা এই পঞ্জিকায় আছে। অন্য বছরে শুধু নির্দিষ্ট তারিখের ছুটি (২১ ফেব্রুয়ারি, ২৬ মার্চ, পহেলা বৈশাখ, ১ মে, ৫ আগস্ট, ১৬ ডিসেম্বর, ২৫ ডিসেম্বর) ও সাপ্তাহিক ছুটি দেখাচ্ছে। ঈদ, পূজা ইত্যাদি ঘোষণার পর কোডে যোগ করতে হবে।</p></section>
 <section id="ebook"><h2>ই-বুক লাইব্রেরি</h2><p class="sub">বিষয় বেছে অধ্যায় পড়ুন, বুকমার্ক ও নোট রাখুন। পূর্ণ পাঠ্যবই এখানে নেই (সেগুলো কপিরাইটযুক্ত ও আকারে বিশাল)। আছে অধ্যায়ের কাঠামো, সংক্ষিপ্ত সারাংশ এবং বই থেকে নিজের পাঠ যোগ করার সুবিধা।</p><div id="eb"></div></section>
 <section id="mcq"><h2>অধ্যায়ভিত্তিক MCQ অনুশীলন</h2><p class="sub">বিষয় ও অধ্যায় বেছে নৈর্ব্যক্তিক প্রশ্নের উত্তর দিন। নমুনা প্রশ্ন সীমিত, তাই পাঠ্যবই থেকে নিজের প্রশ্ন যোগ করে ভাণ্ডার বড় করুন।</p>
-<div class="g"><div class="td"><select id="qs"></select><select id="qc"></select><button id="qgo">শুরু করুন</button></div><p class="mut" id="qn"></p></div>
+<div class="g"><div class="td"><select id="qs"></select><select id="qc"></select><select id="qsec"></select><label class="mut"><input type="checkbox" id="qo"> ক্রমানুসারে</label><button id="qgo">শুরু করুন</button><button class="o" id="qls">তালিকা দেখুন</button></div><p class="mut" id="qn"></p></div>
 <div class="g" id="qq" style="display:none;margin-top:14px"></div>
 <div class="g" style="margin-top:14px"><h3>সাম্প্রতিক ফলাফল</h3><div id="qh"></div></div>
-<details class="g" style="margin-top:14px"><summary class="hd" style="cursor:pointer;color:var(--cy)">নিজের প্রশ্ন যোগ করুন</summary><div style="display:grid;gap:8px;margin-top:10px"><select id="as"></select><input type="text" id="ac" placeholder="অধ্যায়ের নাম"><input type="text" id="aq" placeholder="প্রশ্ন"><input type="text" id="o0" placeholder="ক) অপশন"><input type="text" id="o1" placeholder="খ) অপশন"><input type="text" id="o2" placeholder="গ) অপশন"><input type="text" id="o3" placeholder="ঘ) অপশন"><select id="aa"><option value="0">সঠিক উত্তর: ক</option><option value="1">সঠিক উত্তর: খ</option><option value="2">সঠিক উত্তর: গ</option><option value="3">সঠিক উত্তর: ঘ</option></select><button id="qadd">প্রশ্ন সংরক্ষণ করুন</button></div><h3 style="margin-top:14px">আমার যোগ করা প্রশ্ন</h3><div id="ml"></div></details></section>
+<details class="g" style="margin-top:14px"><summary class="hd" style="cursor:pointer;color:var(--cy)">নিজের প্রশ্ন যোগ করুন</summary><div style="display:grid;gap:8px;margin-top:10px"><select id="as"></select><input type="text" id="ac" placeholder="অধ্যায়ের নাম"><input type="text" id="asec" placeholder="সেকশন (ঐচ্ছিক)"><input type="text" id="aq" placeholder="প্রশ্ন"><input type="text" id="o0" placeholder="ক) অপশন"><input type="text" id="o1" placeholder="খ) অপশন"><input type="text" id="o2" placeholder="গ) অপশন"><input type="text" id="o3" placeholder="ঘ) অপশন"><select id="aa"><option value="0">সঠিক উত্তর: ক</option><option value="1">সঠিক উত্তর: খ</option><option value="2">সঠিক উত্তর: গ</option><option value="3">সঠিক উত্তর: ঘ</option></select><button id="qadd">প্রশ্ন সংরক্ষণ করুন</button></div><h3 style="margin-top:14px">একসাথে অনেক প্রশ্ন (মার্কডাউন)</h3><p class="mut">উপরে বিষয় বেছে নিন। <code># অধ্যায়</code> লাইন থেকে অধ্যায়, <code>### সেকশন</code> লাইন থেকে সেকশন নেবে (না থাকলে উপরের দুই ঘরের লেখা)। প্রশ্ন নম্বর অনুযায়ী সাজাবে। সংক্ষিপ্ত প্রশ্ন-উত্তর ও চার অপশনের MCQ দুটোই চলে। <b>পেস্ট করলে বা ফাইল দিলেই নিজে থেকে সংরক্ষণ হয়ে যাবে</b>; হাতে টাইপ করলে শেষে "সব সংরক্ষণ করুন" চাপুন।</p><textarea id="md" rows="10" placeholder="# গন্তব্য কাবুল — সৈয়দ মুজতবা আলী&#10;&#10;### লেখক-পরিচিতি অংশ থেকে:&#10;১. **গল্পটির লেখক কে?**&#10;* **উত্তর:** সৈয়দ মুজতবা আলী।&#10;&#10;২. **তিনি কোথায় জন্মগ্রহণ করেন?**&#10;* **উত্তর:** আসামের করিমগঞ্জে।&#10;&#10;### ১০৪ নং পৃষ্ঠা থেকে:&#10;৩. **...**&#10;* **উত্তর:** ..." style="width:100%;background:#000;color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:10px;font:inherit"></textarea><label class="mut">অথবা ফাইল আপলোড (.md / .txt, একাধিক হলেও চলবে): <input type="file" id="mdf" accept=".md,.markdown,.txt,text/markdown,text/plain" multiple></label><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="o" id="mdp">যাচাই করুন</button><button id="mds" style="display:none">সব সংরক্ষণ করুন</button></div><p class="mut" id="mdr"></p><h3 style="margin-top:14px">আমার যোগ করা প্রশ্ন</h3><div id="ml"></div></details></section>
 <section id="focus"><h2>ফোকাস টাইমার</h2><p class="sub">নির্দিষ্ট সময় মন দিয়ে পড়ুন, তারপর ছোট বিরতি নিন।</p><div class="g" style="text-align:center"><div class="mut" id="fmode">ফোকাস</div><div class="big" id="ft" style="font-size:3.4rem;color:#fff;text-shadow:0 0 24px var(--cy)">২৫:০০</div>
 <div style="display:flex;gap:8px;justify-content:center;margin:12px 0"><button id="fs">শুরু করুন</button><button class="o" id="fr">রিসেট</button></div>
 <label class="mut">ফোকাস <select id="fm"><option value="25">২৫</option><option value="45">৪৫</option><option value="50">৫০</option></select> মিনিট</label> &nbsp; <label class="mut">বিরতি <select id="fb"><option value="5">৫</option><option value="10">১০</option></select> মিনিট</label>
@@ -467,23 +467,66 @@ ebr();
 const SEED=[['ICT','সংখ্যা পদ্ধতি','১ বাইট সমান কত বিট?',['৪','৮','১৬','৩২'],1],['ICT','সংখ্যা পদ্ধতি','দ্বিঅঙ্কিক সংখ্যা পদ্ধতির ভিত্তি কত?',['২','৮','১০','১৬'],0],['ICT','তথ্য ও যোগাযোগ প্রযুক্তি','WWW-এর পূর্ণরূপ কোনটি?',['World Wide Web','World Web Wire','Wide World Web','Web World Wide'],0],['পৌরনীতি','সরকার ও সংবিধান','বাংলাদেশের সংবিধান কার্যকর হয় কবে?',['১৬ ডিসেম্বর ১৯৭১','১৬ ডিসেম্বর ১৯৭২','২৬ মার্চ ১৯৭২','৪ নভেম্বর ১৯৭২'],1],['ইতিহাস','ঘটনাপঞ্জি','ভাষা আন্দোলনের ঐতিহাসিক দিবস কোনটি?',['২১ ফেব্রুয়ারি','২৬ মার্চ','১৬ ডিসেম্বর','১৪ ডিসেম্বর'],0],['ইসলাম শিক্ষা','ইবাদত','ইসলামের মূল স্তম্ভ কয়টি?',['৩','৪','৫','৬'],2],['ইংরেজি','Grammar','She ___ to school every day.',['go','goes','going','gone'],1],['বাংলা','ব্যাকরণ','বাংলা বর্ণমালায় স্বরবর্ণ কয়টি?',['৭','৯','১১','১৩'],2],['সমাজবিজ্ঞান','সমাজ পরিচিতি','সমাজবিজ্ঞানের জনক হিসেবে কাকে ধরা হয়?',['অগাস্ট কোঁৎ','কার্ল মার্কস','ম্যাক্স ওয়েবার','হারবার্ট স্পেন্সার'],0]].map(([s,c,q,o,a])=>({s,c,q,o,a}));
 let MQ=ld('mq',[]),Q=null;const bank=()=>[...SEED,...MQ],L='কখগঘ';
 $('#qs').innerHTML=SJ.map(x=>`<option>${x[0]}</option>`).join('');$('#as').innerHTML=$('#qs').innerHTML;
-const sel=()=>bank().filter(q=>q.s===$('#qs').value&&(!$('#qc').value||q.c===$('#qc').value));
+const sel=()=>bank().filter(q=>q.s===$('#qs').value&&(!$('#qc').value||q.c===$('#qc').value)&&(!$('#qsec').value||q.sec===$('#qsec').value));
 const cnt=()=>$('#qn').textContent=bn(sel().length)+'টি প্রশ্ন আছে';
-function chap(){const cs=[...new Set(bank().filter(q=>q.s===$('#qs').value).map(q=>q.c))];$('#qc').innerHTML='<option value="">সব অধ্যায়</option>'+cs.map(c=>`<option>${esc(c)}</option>`).join('');cnt()}
-$('#qs').onchange=chap;$('#qc').onchange=cnt;
-function showQ(){const q=Q.l[Q.i];$('#qq').style.display='';$('#qq').innerHTML=`<div class="mut">${esc(Q.s)} · ${esc(q.c)} · প্রশ্ন ${bn(Q.i+1)}/${bn(Q.l.length)}</div><h3>${esc(q.q)}</h3>`+q.o.map((o,j)=>`<button class="o" data-o="${j}" style="display:block;width:100%;text-align:left;margin-top:8px">${L[j]}) ${esc(o)}</button>`).join('')+'<div id="qf" class="mut" style="margin-top:10px"></div><button id="nx" style="display:none;margin-top:8px"></button>'}
-function mcqStart(){const l=sel();if(!l.length){alert('এই অংশে এখনো কোনো প্রশ্ন নেই। নিচে নিজের প্রশ্ন যোগ করুন।');return}Q={l:l.slice().sort(()=>Math.random()-.5),i:0,sc:0,s:$('#qs').value,c:$('#qc').value,done:0};showQ()}
+function chap(){const cs=[...new Set(bank().filter(q=>q.s===$('#qs').value).map(q=>q.c))];$('#qc').innerHTML='<option value="">সব অধ্যায়</option>'+cs.map(c=>`<option>${esc(c)}</option>`).join('');secs()}
+function secs(){const c=$('#qc').value,ss=[...new Set(bank().filter(q=>q.s===$('#qs').value&&(!c||q.c===c)&&q.sec).map(q=>q.sec))];$('#qsec').innerHTML='<option value="">সব সেকশন</option>'+ss.map(x=>`<option>${esc(x)}</option>`).join('');cnt()}
+$('#qs').onchange=chap;$('#qc').onchange=secs;$('#qsec').onchange=cnt;
+function showQ(){const q=Q.l[Q.i];$('#qq').style.display='';$('#qq').innerHTML=`<div class="mut">${esc(Q.s)} · ${esc(q.c)}${q.sec?' · '+esc(q.sec):''} · প্রশ্ন ${bn(Q.i+1)}/${bn(Q.l.length)}</div><h3>${esc(q.q)}</h3>`+(q.o.length?q.o.map((o,j)=>`<button class="o" data-o="${j}" style="display:block;width:100%;text-align:left;margin-top:8px">${L[j]}) ${esc(o)}</button>`).join(''):'<button id="sa" style="margin-top:8px">উত্তর দেখুন</button>')+'<div id="qf" class="mut" style="margin-top:10px"></div><button id="nx" style="display:none;margin-top:8px"></button>'}
+function mcqStart(){const l=sel();if(!l.length){alert('এই অংশে এখনো কোনো প্রশ্ন নেই। নিচে নিজের প্রশ্ন যোগ করুন।');return}Q={l:$('#qo').checked?l.slice():l.slice().sort(()=>Math.random()-.5),i:0,sc:0,s:$('#qs').value,c:$('#qc').value,done:0};showQ()}
 function mhist(){$('#qh').innerHTML=ld('mh',[]).map(r=>`<div class="ti"><span>${bn(r.d)} · ${esc(r.s)} · ${esc(r.c)}</span><b>${bn(r.sc)}/${bn(r.n)}</b></div>`).join('')||'<p class="mut">এখনো কোনো অনুশীলন হয়নি।</p>'}
 function mcqEnd(){const n=Q.l.length,p=Math.round(Q.sc/n*100),h=ld('mh',[]);h.unshift({d:now().key,s:Q.s,c:Q.c||'সব অধ্যায়',sc:Q.sc,n});sv('mh',h.slice(0,10));
  $('#qq').innerHTML=`<div class="big">${bn(Q.sc)}/${bn(n)} (${bn(p)}%)</div><p class="mut">${p>=80?'চমৎকার! এভাবেই চালিয়ে যান।':p>=50?'ভালো চেষ্টা। ভুলগুলো আবার দেখে নিন।':'আরও অনুশীলন দরকার। অধ্যায়টি আবার পড়ে আসুন।'}</p><button id="rq">আবার চেষ্টা করুন</button>`;Q=null;mhist()}
-function renderMq(){$('#ml').innerHTML=MQ.map((q,i)=>`<div class="ti"><span>${esc(q.s)} · ${esc(q.c)} · ${esc(q.q)}</span><button data-mq="${i}">মুছুন</button></div>`).join('')||'<p class="mut">নিজের কোনো প্রশ্ন যোগ করা হয়নি।</p>'}
+function renderMq(){$('#ml').innerHTML=MQ.map((q,i)=>`<div class="ti"><span>${esc(q.s)} · ${esc(q.c)}${q.sec?' · '+esc(q.sec):''} · ${esc(q.q)}</span><button data-mq="${i}">মুছুন</button></div>`).join('')||'<p class="mut">নিজের কোনো প্রশ্ন যোগ করা হয়নি।</p>'}
+
+const D=t=>String(t).replace(/[০-৯]/g,c=>'০১২৩৪৫৬৭৮৯'.indexOf(c)),LT={'ক':0,'খ':1,'গ':2,'ঘ':3,a:0,b:1,c:2,d:3,'1':0,'2':1,'3':2,'4':3};
+const qcmp=(a,b)=>a.c.localeCompare(b.c,'bn')||((a.n??1e9)-(b.n??1e9));
+const clean=t=>String(t).replace(/\*\*|[_`]/g,'').trim();
+function mdParse(txt,defC,defS){const out=[],err=[],ci={};let ch=defC,sc=defS||'',cur=null;
+ const fin=()=>{if(!cur)return;const k=cur;cur=null;k.q=clean(k.q);if(!k.q)return;const lab=`"${k.q.slice(0,30)}…"`,base={c:k.c,sec:k.sec,n:k.n,q:k.q};
+  if(!k.o.length&&k.t)out.push({...base,o:[],t:k.t});
+  else if(k.o.length===4&&k.a!=null)out.push({...base,o:k.o,a:k.a});
+  else if(k.o.length)err.push(lab+(k.o.length!==4?' — চারটি অপশন পাওয়া যায়নি':' — উত্তর পাওয়া যায়নি'));
+  else err.push(lab+' — উত্তর পাওয়া যায়নি')};
+ txt.replace(/\r/g,'').split('\n').forEach(raw=>{const l=raw.trim();if(!l||/^[-*_]{3,}$/.test(l))return;let m;
+  if(m=l.match(/^(#{1,6})\s*(.+)$/)){fin();const h=clean(m[2]);
+   if(m[1].length>=3)sc=h.replace(/[:：]\s*$/,'');
+   else{ch=h.replace(/^অধ্যায়\s*[:：]\s*/,'').replace(/\s*[\(（][^\)）]*[\)）]\s*$/,'').split(/\s+[—–-]\s+/)[0].trim()||h;sc=defS||''}
+   return}
+  if(cur&&(m=l.match(/^[-*]?\s*\(?([কখগঘABCDabcd])[\)\.।:]\s*(.+)$/))){const i=LT[m[1].toLowerCase()];if(i!=null&&cur.o.length===i){cur.o[i]=clean(m[2]);return}}
+  if(cur&&(m=l.match(/^(?:[-*]\s*)?(?:\*\*)?(?:সঠিক উত্তর|উত্তর|ans(?:wer)?)\s*[:：\-]?\s*(?:\*\*)?\s*[:：]?\s*(.*)$/i))){const v=clean(m[1]);
+   if(cur.o.length===4){const i=LT[D(v[0]||'').toLowerCase()];if(i!=null)cur.a=i}else if(v)cur.t=v;return}
+  if(m=l.match(/^(?:\*\*)?(?:প্রশ্ন\s*)?([0-9০-৯]+)\s*[\.\)।:\-]\s*(?:\*\*)?\s*(.+)$/)){fin();if(!(ch in ci))ci[ch]=Object.keys(ci).length;cur={c:ch,sec:sc,n:+D(m[1]),q:m[2],o:[],a:null,t:null};return}
+  if(cur&&!cur.o.length&&cur.a==null&&cur.t==null){cur.q+=' '+l;return}
+  err.push(`বোঝা যায়নি: "${l.slice(0,40)}"`)});
+ fin();out.sort((a,b)=>ci[a.c]-ci[b.c]||(a.n??1e9)-(b.n??1e9));return{out,err}}
+let MDQ=[];
+$('#mdp').onclick=()=>{const r=mdParse($('#md').value,$('#ac').value.trim()||'সাধারণ',$('#asec').value.trim());MDQ=r.out;
+ const chs=[...new Set(MDQ.map(x=>x.c))],ss=new Set(MDQ.map(x=>x.sec).filter(Boolean)),mc=MDQ.filter(x=>x.o.length).length;
+ $('#mdr').innerHTML=(MDQ.length?`✓ ${bn(MDQ.length)}টি প্রশ্ন পাওয়া গেছে (সংক্ষিপ্ত ${bn(MDQ.length-mc)}, MCQ ${bn(mc)}) · অধ্যায়: ${chs.map(esc).join(', ')}${ss.size?' · '+bn(ss.size)+'টি সেকশন':''}। নম্বর অনুযায়ী সাজানো হয়েছে।`:'কোনো প্রশ্ন পাওয়া যায়নি।')+(r.err.length?'<br>⚠ '+r.err.slice(0,5).map(esc).join('<br>⚠ ')+(r.err.length>5?`<br>…আরও ${bn(r.err.length-5)}টি`:''):'');
+ $('#mds').style.display=MDQ.length?'':'none'};
+function mdSave(){if(!MDQ.length)return;const s0=$('#as').value,has=new Set(MQ.map(q=>q.s+'|'+q.c+'|'+q.q));let add=0,dup=0;
+ MDQ.forEach(x=>{const k=s0+'|'+x.c+'|'+x.q;if(has.has(k)){dup++;return}has.add(k);MQ.push({s:s0,...x});add++});
+ const si={},ci={};MQ.forEach(q=>{if(!(q.s in si))si[q.s]=Object.keys(si).length;const k=q.s+'|'+q.c;if(!(k in ci))ci[k]=Object.keys(ci).length});
+ MQ.sort((a,b)=>si[a.s]-si[b.s]||ci[a.s+'|'+a.c]-ci[b.s+'|'+b.c]||(a.n??1e9)-(b.n??1e9));
+ sv('mq',MQ);$('#mdr').textContent=`✓ ${bn(add)}টি নতুন প্রশ্ন সিরিয়াল অনুযায়ী যোগ হয়েছে`+(dup?` (${bn(dup)}টি আগে থেকেই ছিল, বাদ দেওয়া হয়েছে)`:'')+'। উপরে বিষয় ও অধ্যায় বেছে অনুশীলন করুন।';
+ MDQ=[];$('#md').value='';$('#mds').style.display='none';chap();renderMq()}
+$('#mds').onclick=mdSave;
+$('#md').onpaste=()=>setTimeout(()=>{$('#mdp').onclick();const m=$('#mdr').innerHTML;mdSave();if(!MDQ.length&&/⚠/.test(m))$('#mdr').innerHTML+='<br>'+m.split('<br>').slice(1).join('<br>')},60);
+let mdT;$('#md').oninput=()=>{clearTimeout(mdT);mdT=setTimeout(()=>$('#mdp').onclick(),500)};
+$('#mdf').onchange=async e=>{const fs=[...e.target.files];if(!fs.length)return;let t=$('#md').value.trim();
+ for(const f of fs){try{t+=(t?'\n\n':'')+(await f.text())}catch{}}
+ $('#md').value=t;e.target.value='';$('#mdp').onclick();const m=$('#mdr').innerHTML;mdSave();if(/⚠/.test(m))$('#mdr').innerHTML+='<br>'+m.split('<br>').slice(1).join('<br>')};
 $('#qgo').onclick=mcqStart;
-$('#qadd').onclick=()=>{const o=[0,1,2,3].map(i=>$('#o'+i).value.trim()),q=$('#aq').value.trim(),c=$('#ac').value.trim();if(!q||!c||o.some(x=>!x)){alert('অধ্যায়, প্রশ্ন ও চারটি অপশনই দিন।');return}MQ.push({s:$('#as').value,c,q,o,a:+$('#aa').value});sv('mq',MQ);['aq','ac','o0','o1','o2','o3'].forEach(i=>$('#'+i).value='');chap();renderMq()};
+$('#qadd').onclick=()=>{const o=[0,1,2,3].map(i=>$('#o'+i).value.trim()),q=$('#aq').value.trim(),c=$('#ac').value.trim();if(!q||!c||o.some(x=>!x)){alert('অধ্যায়, প্রশ্ন ও চারটি অপশনই দিন।');return}MQ.push({s:$('#as').value,c,sec:$('#asec').value.trim(),q,o,a:+$('#aa').value});sv('mq',MQ);['aq','ac','asec','o0','o1','o2','o3'].forEach(i=>$('#'+i).value='');chap();renderMq()};
 document.addEventListener('click',e=>{const t=e.target.closest('[data-o]');
  if(t&&Q&&!Q.done){const q=Q.l[Q.i],j=+t.dataset.o;Q.done=1;document.querySelectorAll('[data-o]').forEach(b=>{b.disabled=true;if(+b.dataset.o===q.a)b.classList.add('ok')});if(j===q.a)Q.sc++;else t.classList.add('no');
   $('#qf').textContent=j===q.a?'✓ সঠিক উত্তর':`✗ ভুল। সঠিক উত্তর: ${L[q.a]}) ${q.o[q.a]}`;$('#nx').style.display='';$('#nx').textContent=Q.i+1<Q.l.length?'পরের প্রশ্ন':'ফলাফল দেখুন'}
+ if(e.target.id==='sa'&&Q){const q=Q.l[Q.i];e.target.style.display='none';$('#qf').innerHTML=`<b style="color:var(--tx)">উত্তর: ${esc(q.t)}</b><div style="display:flex;gap:8px;margin-top:8px"><button class="o" data-k="1">✓ পেরেছি</button><button class="o" data-k="0">✗ পারিনি</button></div>`}
+ if(e.target.dataset.k!=null&&Q&&!Q.done){Q.done=1;const ok=e.target.dataset.k==='1';if(ok)Q.sc++;document.querySelectorAll('[data-k]').forEach(b=>b.disabled=true);e.target.classList.add(ok?'ok':'no');$('#nx').style.display='';$('#nx').textContent=Q.i+1<Q.l.length?'পরের প্রশ্ন':'ফলাফল দেখুন'}
  if(e.target.id==='nx'&&Q){Q.done=0;Q.i++;Q.i<Q.l.length?showQ():mcqEnd()}
  if(e.target.id==='rq')mcqStart();
+  if(e.target.id==='qha')$('#qlb').classList.toggle('ha');
  if(e.target.dataset.mq!=null){MQ.splice(e.target.dataset.mq,1);sv('mq',MQ);chap();renderMq()}});
 chap();renderMq();mhist();
 fres();fcount();route();
