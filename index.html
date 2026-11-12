@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -80,9 +80,35 @@ footer{text-align:center;color:var(--mut);padding:30px 16px;border-top:1px solid
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 @media print{:root{--bg:#fff;--tx:#000;--mut:#333;--cy:#000;--bd:#888;--gl:#fff}body{background:#fff}nav,#ring,.noprint,button,.bell,#alarm,#notes{display:none!important}.g,.sl{backdrop-filter:none;box-shadow:none!important;break-inside:avoid}#clk{text-shadow:none;color:#000}.sl.past{opacity:1}}
 main>section{display:none}main>section.on{display:block}
-#gate{display:none;min-height:100vh;align-items:center;justify-content:center;padding:18px}
+#gate{display:none;min-height:100vh;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden}
 body.lock #gate{display:flex}
 body.lock>*:not(#gate){display:none!important}
+#gate::before,#gate::after,#gate i{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(8px);animation:fl 14s ease-in-out infinite alternate}
+#gate::before{width:420px;height:420px;top:-140px;right:-120px;background:radial-gradient(circle,rgba(47,107,255,.30),transparent 68%)}
+#gate::after{width:420px;height:420px;bottom:-150px;left:-120px;background:radial-gradient(circle,rgba(244,114,182,.28),transparent 68%);animation-delay:-5s}
+#gb{width:100%;max-width:410px;position:relative;z-index:1}
+.au{width:100%;background:#fff;border-radius:28px;padding:26px 22px 20px;box-shadow:0 24px 60px rgba(47,107,255,.18),0 2px 8px rgba(16,33,58,.06);position:relative;overflow:hidden}
+.au::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#2f6bff,#06b6d4,#f472b6)}
+.au .top{display:flex;justify-content:space-between;align-items:center;margin:6px 0 18px}
+.au h2{font-size:1.65rem;margin:0 0 4px;color:var(--tx)}
+.au .st{display:block;text-align:left;font-weight:400;color:var(--mut);font-size:.95rem;margin-bottom:18px;line-height:1.5}
+.lt{display:flex;border:1.5px solid var(--bd);border-radius:999px;overflow:hidden;background:#f6f9ff}
+.lt button{background:none!important;color:var(--mut)!important;padding:5px 13px;border-radius:0;font-size:.8rem;font-weight:700;box-shadow:none}
+.lt button.on{background:var(--bl)!important;color:#fff!important}
+.au .tabs{display:grid;grid-template-columns:1fr 1fr;background:#eef3ff;border-radius:14px;padding:4px;margin-bottom:16px}
+.au .tabs button{background:none!important;color:var(--mut)!important;border-radius:11px;padding:10px;font-weight:700;box-shadow:none}
+.au .tabs button.on{background:#fff!important;color:var(--bl)!important;box-shadow:0 2px 8px rgba(47,107,255,.22)}
+.au .fd{position:relative;margin-bottom:12px}
+.au .fd>svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#7a8ba6;pointer-events:none}
+.au .fd input{width:100%;padding:14px 46px 14px 44px;border-radius:14px;background:#f6f9ff;border:1.5px solid #dbe6fb;color:var(--tx);font:inherit;outline:none;transition:border-color .15s,box-shadow .15s,background .15s}
+.au .fd input::placeholder{color:#8a99b3}
+.au .fd input:focus{background:#fff;border-color:var(--bl);box-shadow:0 0 0 4px rgba(47,107,255,.14)}
+.au .ey{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none!important;padding:7px 9px;border-radius:10px;color:#7a8ba6!important;line-height:0;box-shadow:none}
+.au .ey svg{width:19px;height:19px}
+.au .pri{width:100%;padding:14px;font-size:1rem;margin-top:4px;border-radius:14px;background:linear-gradient(135deg,#2f6bff,#06b6d4)!important;color:#fff!important;font-weight:700;box-shadow:0 10px 22px rgba(47,107,255,.32)}
+.au .lk{background:none!important;color:var(--bl)!important;padding:12px 4px 2px;font-size:.9rem;font-weight:600;border-radius:0;box-shadow:none}
+.au .ms{min-height:1.5em;font-size:.9rem;margin:10px 0 0;text-align:center;color:var(--mut);line-height:1.45}
+.au .ft{text-align:center;color:#9aa8c0;font-size:.7rem;letter-spacing:.22em;margin-top:14px}
 select{background:#000;color:var(--tx);border:1px solid var(--bd);border-radius:8px;padding:4px 8px;font:inherit}
 .td{flex-wrap:wrap}
 #bg{display:block}#m{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;background:rgba(0,0,0,.95);padding:10px 16px;border-bottom:1px solid var(--bd)}#m.on{display:flex}#m a{padding:12px}
@@ -170,12 +196,67 @@ td.cur{outline:0;background:#fff3c4!important;animation:pls 1.6s ease-in-out inf
 .cmh2{padding:0 14px 12px;color:#dc2626;font-size:.8rem;line-height:1.6}
 #cs button{background:#fff;color:var(--bl);border:2px solid var(--bl)}
 #cs button.on{background:linear-gradient(135deg,#2f6bff,#ec4899);color:#fff;border-color:transparent}
-.ha .an{visibility:hidden}.qh3{margin:14px 0 6px;color:var(--cy)}.qi{padding:8px 0;border-bottom:1px solid var(--bd)}</style>
+.ha .an{visibility:hidden}.qh3{margin:14px 0 6px;color:var(--cy)}.qi{padding:8px 0;border-bottom:1px solid var(--bd)}
+/* ===== unique menu button ===== */
+#bg{display:none;align-items:center;gap:9px;padding:7px 15px 7px 12px;border-radius:999px;border:1.5px solid rgba(255,255,255,.75);background:rgba(255,255,255,.2);color:#fff;font-weight:700;font-size:.92rem;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 4px 14px rgba(0,0,0,.14);transition:background .2s,color .2s,transform .15s}
+#bg:active{transform:scale(.95)}
+#bg[aria-expanded="true"]{background:#fff;color:var(--bl);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.mi{position:relative;width:20px;height:16px;display:block}
+.mi i{position:absolute;right:0;height:2.6px;border-radius:3px;background:currentColor;transition:transform .32s cubic-bezier(.7,0,.3,1),width .3s,opacity .2s,top .3s}
+.mi i:nth-child(1){top:0;width:20px}.mi i:nth-child(2){top:6.7px;width:12px}.mi i:nth-child(3){top:13.4px;width:16px}
+#bg[aria-expanded="true"] .mi i:nth-child(1){top:6.7px;width:20px;transform:rotate(45deg)}
+#bg[aria-expanded="true"] .mi i:nth-child(2){width:0;opacity:0}
+#bg[aria-expanded="true"] .mi i:nth-child(3){top:6.7px;width:20px;transform:rotate(-45deg)}
+@keyframes mpop{from{opacity:0;transform:translateY(-10px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:760px){
+#bg{display:inline-flex}
+#m{top:64px;left:12px;right:12px;border:0;border-radius:24px;padding:12px;grid-template-columns:1fr 1fr;gap:8px;max-height:calc(100vh - 88px);overflow:auto;box-shadow:0 26px 55px rgba(16,33,58,.3)!important}
+#m.on{display:grid;animation:mpop .22s ease-out}
+#m a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:16px;background:#f4f7ff;font-weight:600;font-size:.92rem;line-height:1.25}
+#m a::before{content:"•";display:grid;place-items:center;flex:none;width:34px;height:34px;border-radius:11px;background:#fff;box-shadow:0 2px 6px rgba(47,107,255,.16);font-size:1.05rem}
+#m a:nth-child(4n+1)::before{background:#e4edff}#m a:nth-child(4n+2)::before{background:#dff7fc}#m a:nth-child(4n+3)::before{background:#ffe5f1}#m a:nth-child(4n)::before{background:#fff1d1}
+#m a[href="#home"]::before{content:"🏠"}#m a[href="#alarm"]::before{content:"⏰"}#m a[href="#cal"]::before{content:"📅"}#m a[href="#ebook"]::before{content:"📚"}#m a[href="#mcq"]::before{content:"📝"}#m a[href="#focus"]::before{content:"🎯"}#m a[href="#exam"]::before{content:"⏳"}#m a[href="#daily"]::before{content:"🗓️"}#m a[href="#weekly"]::before{content:"📆"}#m a[href="#subjects"]::before{content:"🧩"}#m a[href="#college"]::before{content:"🏫"}#m a[href="#progress"]::before{content:"📈"}#m a[href="#notes"]::before{content:"🗒️"}#m a[href="#account"]::before{content:"👤"}#m a[href="#contact"]::before{content:"✉️"}
+}
+/* ===== lively account section ===== */
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes pr{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}100%{box-shadow:0 0 0 20px rgba(255,255,255,0)}}
+@keyframes dt{0%{box-shadow:0 0 0 0 rgba(74,222,128,.75)}80%,100%{box-shadow:0 0 0 8px rgba(74,222,128,0)}}
+@keyframes dtw{0%{box-shadow:0 0 0 0 rgba(251,191,36,.8)}80%,100%{box-shadow:0 0 0 8px rgba(251,191,36,0)}}
+@keyframes rot{to{transform:rotate(360deg)}}
+.acx{animation:up .4s ease both}
+.ahero{position:relative;overflow:hidden;border-radius:26px;padding:16px 18px 20px;color:#fff;background:linear-gradient(135deg,#2f6bff 0%,#06b6d4 58%,#34d399 125%);box-shadow:0 18px 38px rgba(47,107,255,.32)}
+.ahero::before,.ahero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.16);animation:fl 9s ease-in-out infinite alternate;pointer-events:none}
+.ahero::before{width:190px;height:190px;right:-55px;top:-75px}
+.ahero::after{width:130px;height:130px;left:42%;bottom:-75px;animation-delay:-3s;background:rgba(244,114,182,.4)}
+.ahero .tp,.ahero .row{position:relative;z-index:1}
+.ahero .tp{display:flex;justify-content:flex-end;margin-bottom:8px}
+.ahero .row{display:flex;align-items:center;gap:14px}
+.ahero .lt{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.6)}
+.ahero .lt button{color:#fff!important}.ahero .lt button.on{background:#fff!important;color:#2f6bff!important}
+.av{flex:none;width:68px;height:68px;border-radius:50%;background:#fff;display:grid;place-items:center;font:800 1.9rem 'Anek Bangla','Hind Siliguri',sans-serif;color:#2f6bff;animation:pr 2.4s ease-out infinite}
+.ahero .hi{font-size:1.28rem;font-weight:800;line-height:1.25}
+.ahero .em{opacity:.92;font-size:.9rem;word-break:break-all}
+.sy{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.45);padding:4px 11px;border-radius:999px;font-size:.78rem;margin-top:8px}
+.sy i{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:dt 1.8s infinite}
+.sy.w i{background:#fbbf24;animation-name:dtw}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:12px;margin:16px 0}
+.stl{background:#fff;border-radius:20px;padding:14px;box-shadow:0 8px 22px rgba(47,107,255,.1);border-top:4px solid var(--c);animation:up .5s ease both}
+.stl .ic{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;font-size:1.2rem;background:var(--c2)}
+.stl b{display:block;font:800 1.9rem/1.1 'Anek Bangla','Hind Siliguri',sans-serif;margin-top:8px;color:var(--tx)}
+.stl span{color:var(--mut);font-size:.85rem}
+.shd{font-weight:700;margin:2px 0 8px;color:var(--tx)}
+.chs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.chs span{background:#fff;border:1.5px solid #dbe6fb;border-radius:999px;padding:5px 12px;font-size:.85rem;font-weight:600;color:var(--tx)}
+.chs span::before{content:"✓ ";color:#059669;font-weight:800}
+.acts{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.acts .dg{background:none!important;color:#e11d48!important;border:1.5px solid #fecdd3;box-shadow:none}
+.ri{display:inline-block;margin-right:4px}.spin .ri{animation:rot .9s linear infinite}
+</style>
 </head>
 <body>
 <script>try{var c=window.CLOUD;if(c&&c.url&&c.key&&!localStorage.getItem('acc'))document.body.classList.add('lock')}catch(e){}</script>
-<div id="gate"><div class="g" style="max-width:440px;width:100%"><div style="text-align:center;margin-bottom:10px"><span class="lg" style="width:64px;height:64px;display:inline-block"></span><h2 style="margin:10px 0 2px">Thelearner.arts28</h2><p class="mut" style="margin:0">LEARN • CREATE • GROW</p></div><div id="gb"></div></div></div>
-<nav><div class="w"><a class="logo hd" href="#home"><span class="lg" style="width:36px;height:36px;border:2px solid #fff"></span>Thelearner.arts28</a><button id="bg" aria-label="মেনু" aria-expanded="false">মেনু</button>
+<div id="gate"><div id="gb"></div></div>
+<nav><div class="w"><a class="logo hd" href="#home"><span class="lg" style="width:36px;height:36px;border:2px solid #fff"></span>Thelearner.arts28</a><button id="bg" aria-label="Menu" aria-expanded="false"><span class="mi"><i></i><i></i><i></i></span><span class="ml">Menu</span></button>
 <div id="m"><a href="#home">হোম</a><a href="#alarm">অ্যালার্ম</a><a href="#cal">ক্যালেন্ডার</a><a href="#ebook">ই-বুক লাইব্রেরি</a><a href="#mcq">MCQ অনুশীলন</a><a href="#focus">ফোকাস টাইমার</a><a href="#exam">পরীক্ষা কাউন্টডাউন</a><a href="#daily">দৈনিক রুটিন</a><a href="#weekly">সাপ্তাহিক</a><a href="#subjects">বিষয়</a><a href="#college">কলেজ</a><a href="#progress">অগ্রগতি</a><a href="#notes">নোট</a><a href="#account">অ্যাকাউন্ট</a><a href="#contact">যোগাযোগ</a></div></div></nav>
 
 <header class="hero w" id="home">
@@ -252,7 +333,7 @@ td.cur{outline:0;background:#fff3c4!important;animation:pls 1.6s ease-in-out inf
 <label class="mut">ফোকাস <select id="fm"><option value="25">২৫</option><option value="45">৪৫</option><option value="50">৫০</option></select> মিনিট</label> &nbsp; <label class="mut">বিরতি <select id="fb"><option value="5">৫</option><option value="10">১০</option></select> মিনিট</label>
 <p class="big" id="fc" style="margin-top:12px"></p><p class="mut">টাইমার চলাকালীন পেজ খোলা ও স্ক্রিন চালু রাখুন।</p></div></section>
 <section id="exam"><h2>পরীক্ষার কাউন্টডাউন</h2><p class="sub">পরীক্ষার নাম ও তারিখ দিন, কত দিন বাকি তা দেখুন।</p><div class="g"><div class="td"><input type="text" id="en2" placeholder="পরীক্ষার নাম"><input type="date" id="ed" style="background:#000;color:var(--tx);border:1px solid var(--bd);border-radius:12px;padding:8px"><button id="ea">যোগ করুন</button></div><div id="exl"></div></div></section>
-<section id="account"><h2>অ্যাকাউন্ট</h2><div class="g" id="acb"></div></section>
+<section id="account"><h2>অ্যাকাউন্ট</h2><div id="acb"></div></section>
 <section id="contact"><h2>যোগাযোগ</h2><div class="g"><div class="big">Thelearner.arts28</div><p class="mut">LEARN • CREATE • GROW</p><p>HSC মানবিক বিভাগের একাদশ শ্রেণির জন্য ব্যক্তিগত স্টাডি পরিকল্পনা।</p><p><a class="btn" href="mailto:thelearner.arts28@gmail.com">thelearner.arts28@gmail.com</a></p>
 <p class="mut" style="margin-top:12px">অফলাইন: পেজটি একবার খোলার পর ফোনে ফাইলটি সেভ রাখলে ইন্টারনেট ছাড়াও চলবে। নোট ও টিক এই ডিভাইসের ব্রাউজারেই জমা থাকে। ফন্ট অফলাইনে সিস্টেম ফন্টে বদলে যাবে।</p></div></section>
 </main>
@@ -626,10 +707,21 @@ loadShared();
 /*CL-START*/
 (()=>{
 const SK=['al','bm','cc','cm','en','ex','fc','fs','lf','mh','mq','nt','p','rd','td'],C=()=>{const c=window.CLOUD;return c&&c.url&&c.key?c:null},LS=localStorage,gj=(k,d)=>{try{return JSON.parse(LS.getItem(k))??d}catch{return d}};
-let A=gj('acc',null),REC=null,pt=0,RF=null,busy=false;
+let A=gj('acc',null),REC=null,pt=0,RF=null,busy=false,MODE='login',lang=LS.getItem('lang')==='bn'?'bn':'en';
 const cs=v=>JSON.stringify(v,(k,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a<b?-1:a>b?1:0)):x);
 window.__chg=k=>{if(!SK.includes(k))return;const kt=gj('kt',{});kt[k]=Date.now();LS.setItem('kt',JSON.stringify(kt));LS.setItem('dirty','1');if(A)sched()};
-const emsg=e=>{const m=String(e&&e.message||e);return/E_EMPTY/.test(m)?'ইমেইল ও পাসওয়ার্ড দুটোই দিন।':/E_EMAIL/.test(m)?'আগে ইমেইল লিখুন।':/E_PW/.test(m)?'পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের দিন।':/Invalid login/i.test(m)?'ইমেইল বা পাসওয়ার্ড ভুল।':/already (been )?registered/i.test(m)?'এই ইমেইলে আগেই অ্যাকাউন্ট খোলা হয়েছে, লগইন করুন।':/Password should|at least/i.test(m)?'পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের দিন।':/valid email|invalid.*email/i.test(m)?'ইমেইলটি সঠিক নয়।':/not confirmed/i.test(m)?'ইমেইল নিশ্চিত করা হয়নি, ইনবক্স দেখুন।':/rate limit|too many/i.test(m)?'অল্প সময়ে অনেকবার চেষ্টা হয়েছে, একটু পরে আবার করুন।':/session/.test(m)?'সেশন শেষ হয়ে গেছে, আবার লগইন করুন।':/Failed to fetch|NetworkError|Load failed/i.test(m)?'ইন্টারনেট সংযোগ দেখুন।':e&&e.status===404?'ডেটাবেস টেবিল তৈরি হয়নি (supabase.sql চালাতে হবে)।':m};
+const TX={en:{wL:'Welcome back',wS:'Create your account',sL:'Log in to continue to Thelearner.arts28',sS:'Sign up to keep your routines, notes and questions on every device.',login:'Log in',signup:'Sign up',email:'Email address',pw:'Password',pwNew:'Password (at least 6 characters)',forgot:'Forgot password?',create:'Create account',setT:'Set a new password',setS:'Choose a new password for your account.',newpw:'New password (at least 6 characters)',upd:'Update password',wait:'Please wait…',
+ okIn:'✓ Logged in and synced.',okSync:'✓ Sync complete.',okConf:'✓ Account created. Open the confirmation link we emailed you, then log in.',okRes:'✓ Password reset link sent to your email.',okPw:'✓ Password updated. Please log in.',
+ eEmpty:'Please enter your email and password.',eEmail:'Enter your email first.',ePw:'Password must be at least 6 characters.',eCred:'Incorrect email or password.',eExists:'An account with this email already exists. Please log in.',eBad:'That email address is not valid.',eConf:'Email not confirmed yet. Check your inbox.',eRate:'Too many attempts. Please try again in a little while.',eSess:'Your session has ended. Please log in again.',eNet:'Check your internet connection.',eTab:'The database table is missing (run supabase.sql).',
+ inT:'Signed in',pend:'Changes waiting to sync',last:'Synced · ',never:'Not synced yet',menu:'Menu',gm:'Good morning',ga:'Good afternoon',ge:'Good evening',gh:'Hello',stQ:'Questions added',stN:'Notes',stM:'Practice sessions',stA:'Alarms',sh:'Synced to your account',chs:'Routines|Notes|MCQ questions|Progress|Alarms',syncNow:'Sync now',out:'Log out',outx:'Log out & remove data from this device',outW:'Changes are still waiting to sync. Without internet, removing data would lose them. Connect and try again.',outC:'All data on this device will be removed (it stays in your account). Continue?',
+ nc:'Accounts are not set up yet',ncB:'The site owner needs to set up the cloud (Supabase) once and add a config.js file. Until then, all data stays on this device.',acc:'Account',navAcc:'Account',eye:'Show or hide password'},
+ bn:{wL:'আবার স্বাগতম',wS:'নতুন অ্যাকাউন্ট খুলুন',sL:'Thelearner.arts28-এ ঢুকতে লগইন করুন',sS:'অ্যাকাউন্ট খুললে রুটিন, নোট ও প্রশ্ন সব ডিভাইসে পাবেন।',login:'লগইন',signup:'সাইন আপ',email:'ইমেইল',pw:'পাসওয়ার্ড',pwNew:'পাসওয়ার্ড (কমপক্ষে ৬ অক্ষর)',forgot:'পাসওয়ার্ড ভুলে গেছেন?',create:'অ্যাকাউন্ট খুলুন',setT:'নতুন পাসওয়ার্ড দিন',setS:'আপনার অ্যাকাউন্টের জন্য নতুন পাসওয়ার্ড বেছে নিন।',newpw:'নতুন পাসওয়ার্ড (কমপক্ষে ৬ অক্ষর)',upd:'পাসওয়ার্ড বদলান',wait:'⏳ অপেক্ষা করুন…',
+ okIn:'✓ লগইন হয়েছে, তথ্য সিঙ্ক হয়েছে।',okSync:'✓ সিঙ্ক সম্পন্ন।',okConf:'✓ অ্যাকাউন্ট খোলা হয়েছে। ইমেইলে পাঠানো লিংকে ক্লিক করে নিশ্চিত করুন, তারপর লগইন করুন।',okRes:'✓ পাসওয়ার্ড বদলানোর লিংক ইমেইলে পাঠানো হয়েছে।',okPw:'✓ পাসওয়ার্ড বদলেছে, এবার লগইন করুন।',
+ eEmpty:'ইমেইল ও পাসওয়ার্ড দুটোই দিন।',eEmail:'আগে ইমেইল লিখুন।',ePw:'পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের দিন।',eCred:'ইমেইল বা পাসওয়ার্ড ভুল।',eExists:'এই ইমেইলে আগেই অ্যাকাউন্ট খোলা হয়েছে, লগইন করুন।',eBad:'ইমেইলটি সঠিক নয়।',eConf:'ইমেইল নিশ্চিত করা হয়নি, ইনবক্স দেখুন।',eRate:'অল্প সময়ে অনেকবার চেষ্টা হয়েছে, একটু পরে আবার করুন।',eSess:'সেশন শেষ হয়ে গেছে, আবার লগইন করুন।',eNet:'ইন্টারনেট সংযোগ দেখুন।',eTab:'ডেটাবেস টেবিল তৈরি হয়নি (supabase.sql চালাতে হবে)।',
+ inT:'লগইন আছে',pend:'সিঙ্ক বাকি আছে',last:'সিঙ্ক হয়েছে · ',never:'এখনো সিঙ্ক হয়নি',menu:'মেনু',gm:'শুভ সকাল',ga:'শুভ অপরাহ্ন',ge:'শুভ সন্ধ্যা',gh:'নমস্কার',stQ:'যোগ করা প্রশ্ন',stN:'নোট',stM:'অনুশীলন সেশন',stA:'অ্যালার্ম',sh:'আপনার অ্যাকাউন্টে সিঙ্ক হয়',chs:'রুটিন|নোট|MCQ প্রশ্ন|অগ্রগতি|অ্যালার্ম',syncNow:'এখনই সিঙ্ক করুন',out:'লগআউট',outx:'লগআউট ও এই ডিভাইস থেকে তথ্য মুছুন',outW:'সিঙ্ক বাকি আছে। ইন্টারনেট ছাড়া তথ্য মুছলে হারিয়ে যাবে, ইন্টারনেট চালু করে আবার চেষ্টা করুন।',outC:'এই ডিভাইস থেকে সব তথ্য মুছে যাবে (অ্যাকাউন্টে জমা থাকবে)। নিশ্চিত?',
+ nc:'অ্যাকাউন্ট এখনো চালু হয়নি',ncB:'সাইটের মালিককে একবার ক্লাউড সেটআপ (Supabase) করে config.js ফাইল যোগ করতে হবে। ততক্ষণ সব তথ্য এই ডিভাইসেই জমা থাকবে।',acc:'অ্যাকাউন্ট',navAcc:'অ্যাকাউন্ট',eye:'পাসওয়ার্ড দেখান বা লুকান'}};
+const t=k=>(TX[lang][k]??TX.en[k]??k);
+const emsg=e=>{const m=String(e&&e.message||e),k=/E_EMPTY/.test(m)?'eEmpty':/E_EMAIL/.test(m)?'eEmail':/E_PW/.test(m)?'ePw':/Invalid login/i.test(m)?'eCred':/already (been )?registered/i.test(m)?'eExists':/Password should|at least/i.test(m)?'ePw':/valid email|invalid.*email/i.test(m)?'eBad':/not confirmed/i.test(m)?'eConf':/rate limit|too many/i.test(m)?'eRate':/session/.test(m)?'eSess':/Failed to fetch|NetworkError|Load failed/i.test(m)?'eNet':e&&e.status===404?'eTab':null;return k?t(k):m};
 async function api(path,o={},auth){const c=C();if(!c)throw Error('cfg');const h={apikey:c.key,'Content-Type':'application/json',...(o.headers||{})};
  if(auth===true){await fresh();h.Authorization='Bearer '+A.at}else if(auth)h.Authorization='Bearer '+auth;else h.Authorization='Bearer '+c.key;
  const r=await fetch(c.url.replace(/\/+$/,'')+path,{...o,headers:h});let j=null;try{j=await r.json()}catch{}
@@ -650,30 +742,47 @@ async function doSync(apply){const c=await pull(),l=snap(),m=merge(l,c);let ch=f
 function sched(){if(pt)return;pt=setTimeout(async()=>{pt=0;try{await doSync(false);ui()}catch{ui()}},4000)}
 function startSync(){if(!A||!C())return Promise.resolve();return doSync(true).then(ch=>{if(ch&&!sessionStorage.getItem('rl')){sessionStorage.setItem('rl','1');location.reload()}else sessionStorage.removeItem('rl');ui()}).catch(()=>ui())}
 function out(erase){A=null;['acc','dirty','lts'].forEach(k=>LS.removeItem(k));if(erase){SK.concat('kt').forEach(k=>LS.removeItem(k));location.reload()}else ui()}
-const $$=id=>document.getElementById(id),setM=t=>{const e=$$('cl-m');if(e)e.textContent=t};
+const $$=id=>document.getElementById(id),setM=x=>{const e=$$('cl-m');if(e){e.textContent=x;e.style.color=x[0]==='⚠'?'#e11d48':x[0]==='✓'?'#059669':''}};
+const IC={mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7.5 8 5.5 8-5.5"/></svg>',lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>'};
+const pill=()=>`<div class="lt"><button id="cl-len" class="${lang==='en'?'on':''}">EN</button><button id="cl-lbn" class="${lang==='bn'?'on':''}">বাং</button></div>`;
+const card=h=>`<div class="au"><div class="top"><span class="lg" style="width:52px;height:52px;border:2px solid var(--cy)"></span>${pill()}</div>${h}<div class="ft">LEARN • CREATE • GROW</div></div>`;
+function applyLang(){try{document.documentElement.lang=lang;const a=document.querySelector('#m a[href="#account"]'),h=document.querySelector('#account h2');if(a)a.textContent=t('navAcc');const ml=document.querySelector('#bg .ml'),bg=document.getElementById('bg');if(ml)ml.textContent=t('menu');if(bg)bg.setAttribute('aria-label',t('menu'));if(h)h.textContent=t('acc')}catch{}}
 function setLock(){if(document.body)document.body.classList.toggle('lock',!!(C()&&!A))}
-function ui(){const b=$$('acb'),g=$$('gb');if(!b)return;setLock();const R=h=>{if(g){g.innerHTML=h;b.innerHTML=''}else b.innerHTML=h};
- if(!C()){b.innerHTML='<h3>অ্যাকাউন্ট এখনো চালু হয়নি</h3><p class="mut">লগইনের জন্য সাইটের মালিককে একবার ক্লাউড সেটআপ (Supabase) করে <code>config.js</code> ফাইল যোগ করতে হবে। ততক্ষণ সব তথ্য এই ডিভাইসেই জমা থাকবে।</p>';return}
- if(A){if(g)g.innerHTML='';const t=+LS.getItem('lts')||0,d=LS.getItem('dirty');
-  b.innerHTML=`<h3>👤 লগইন আছে</h3><p><b>${esc(A.email)}</b></p><p class="mut">${d?'⏳ সিঙ্ক বাকি আছে':t?'✓ সর্বশেষ সিঙ্ক: '+new Date(t).toLocaleString('bn-BD',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'}):'এখনো সিঙ্ক হয়নি'}</p><p class="mut">রুটিন, নোট, MCQ প্রশ্ন, অগ্রগতি, অ্যালার্ম ইত্যাদি সব তথ্য আপনার অ্যাকাউন্টে নিজে থেকে জমা হয়। অন্য ডিভাইসে একই ইমেইলে লগইন করলেই পাবেন।</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button id="cl-sync">এখনই সিঙ্ক করুন</button><button class="o" id="cl-out">লগআউট</button><button class="o" id="cl-outx">লগআউট ও এই ডিভাইস থেকে তথ্য মুছুন</button></div><p class="mut" id="cl-m" style="margin-top:8px"></p>`;return}
- if(REC){R('<h3>নতুন পাসওয়ার্ড দিন</h3><input type="password" id="cl-pw" placeholder="নতুন পাসওয়ার্ড (কমপক্ষে ৬ অক্ষর)" autocomplete="new-password"><div style="margin-top:8px"><button id="cl-setpw">পাসওয়ার্ড বদলান</button></div><p class="mut" id="cl-m" style="margin-top:8px"></p>');return}
- R('<h3>লগইন বা নতুন অ্যাকাউন্ট</h3><p class="mut">অ্যাকাউন্ট খুললে আপনার রুটিন, নোট ও প্রশ্ন যেকোনো ডিভাইসে লগইন করে দেখতে পারবেন। অন্য কেউ আপনার তথ্য দেখতে পাবে না।</p><div style="display:grid;gap:8px;max-width:420px"><input type="email" id="cl-em" placeholder="ইমেইল" autocomplete="email"><input type="password" id="cl-pw" placeholder="পাসওয়ার্ড (কমপক্ষে ৬ অক্ষর)" autocomplete="current-password"><div style="display:flex;gap:8px;flex-wrap:wrap"><button id="cl-login">লগইন</button><button class="o" id="cl-sign">নতুন অ্যাকাউন্ট খুলুন</button></div><button class="o" id="cl-forgot" style="justify-self:start">পাসওয়ার্ড ভুলে গেছেন?</button></div><p class="mut" id="cl-m" style="margin-top:8px"></p>')}
-async function onClick(e){const id=e.target.id;if(!id||!id.startsWith('cl-')||busy)return;const em=()=>(($$('cl-em')||{}).value||'').trim(),pw=()=>($$('cl-pw')||{}).value||'';busy=true;setM('⏳ অপেক্ষা করুন…');
+function ui(){const b=$$('acb'),g=$$('gb');if(!b)return;setLock();applyLang();const R=h=>{if(g){g.innerHTML=h;b.innerHTML=''}else b.innerHTML=h},em0=($$('cl-em')||{}).value||'';
+ if(!C()){b.innerHTML=`<div class="g acx" style="--c:#f59e0b;text-align:center;padding:26px 18px"><div style="font-size:2.6rem">🔐</div><div style="display:flex;justify-content:center;margin:8px 0">${pill()}</div><h3>${t('nc')}</h3><p class="mut">${t('ncB')}</p></div>`;return}
+ if(A){if(g)g.innerHTML='';const ts=+LS.getItem('lts')||0,d=LS.getItem('dirty'),loc=lang==='bn'?'bn-BD':'en-GB',nm0=A.email.split('@')[0].replace(/[._-]+/g,' ').trim(),nm=nm0.split(' ').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' ').slice(0,20)||'friend',hr=new Date().getHours(),gr=hr>=5&&hr<12?t('gm'):hr>=12&&hr<17?t('ga'):hr>=17&&hr<22?t('ge'):t('gh'),
+  cnt=k=>{const v=gj(k,null);return Array.isArray(v)?v.length:v&&typeof v==='object'?Object.values(v).filter(x=>x!==''&&x!=null&&!(Array.isArray(x)&&!x.length)).length:0},fm=n=>n.toLocaleString(lang==='bn'?'bn-BD':'en-US'),
+  st=d?t('pend'):ts?t('last')+new Date(ts).toLocaleString(loc,{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'}):t('never'),
+  tiles=[['📝',cnt('mq'),'stQ','#2f6bff','#e4edff'],['🗒️',cnt('nt'),'stN','#06b6d4','#dff7fc'],['🎯',cnt('mh'),'stM','#f472b6','#ffe5f1'],['⏰',cnt('al'),'stA','#f59e0b','#fff1d1']];
+  b.innerHTML=`<div class="acx"><div class="ahero"><div class="tp">${pill()}</div><div class="row"><div class="av">${esc(A.email.charAt(0).toUpperCase())}</div><div><div class="hi">${gr}, ${esc(nm)} 👋</div><div class="em">${esc(A.email)}</div><span class="sy${d?' w':''}"><i></i>${st}</span></div></div></div>
+<div class="stats">${tiles.map((x,i)=>`<div class="stl" style="--c:${x[3]};--c2:${x[4]};animation-delay:${i*.07}s"><div class="ic">${x[0]}</div><b data-n="${x[1]}">${fm(x[1])}</b><span>${t(x[2])}</span></div>`).join('')}</div>
+<div class="shd">${t('sh')}</div><div class="chs">${t('chs').split('|').map(x=>`<span>${x}</span>`).join('')}</div>
+<div class="acts"><button id="cl-sync"><span class="ri">↻</span>${t('syncNow')}</button><button class="o" id="cl-out">${t('out')}</button><button class="dg" id="cl-outx">${t('outx')}</button></div><p class="mut" id="cl-m" style="margin-top:10px"></p></div>`;
+  if(b.querySelectorAll&&window.requestAnimationFrame)b.querySelectorAll('[data-n]').forEach(e=>{const n=+e.dataset.n;if(!n)return;const t0=performance.now(),f=x=>{const q=Math.min(1,(x-t0)/700);e.textContent=fm(Math.round(n*q));if(q<1)requestAnimationFrame(f)};requestAnimationFrame(f)});return}
+ if(REC){R(card(`<h2>${t('setT')}</h2><p class="st">${t('setS')}</p><div class="fd">${IC.lock}<input type="password" id="cl-pw" placeholder="${t('newpw')}" autocomplete="new-password"><button type="button" class="ey" id="cl-eye" aria-label="${t('eye')}">${IC.eye}</button></div><button class="pri" id="cl-setpw">${t('upd')}</button><p class="ms" id="cl-m"></p>`));return}
+ const sg=MODE==='sign';
+ R(card(`<h2>${t(sg?'wS':'wL')}</h2><p class="st">${t(sg?'sS':'sL')}</p><div class="tabs"><button id="cl-tl" class="${sg?'':'on'}">${t('login')}</button><button id="cl-ts" class="${sg?'on':''}">${t('signup')}</button></div><div class="fd">${IC.mail}<input type="email" id="cl-em" placeholder="${t('email')}" aria-label="${t('email')}" autocomplete="email" value="${esc(em0)}"></div><div class="fd">${IC.lock}<input type="password" id="cl-pw" placeholder="${t(sg?'pwNew':'pw')}" aria-label="${t('pw')}" autocomplete="${sg?'new-password':'current-password'}"><button type="button" class="ey" id="cl-eye" aria-label="${t('eye')}">${IC.eye}</button></div><button class="pri" id="${sg?'cl-sign':'cl-login'}">${t(sg?'create':'login')}</button>${sg?'':`<div style="text-align:center"><button class="lk" id="cl-forgot">${t('forgot')}</button></div>`}<p class="ms" id="cl-m"></p>`))}
+async function onClick(e){const el=e.target&&e.target.closest?e.target.closest('[id^="cl-"]'):e.target,id=el&&el.id;if(!id||!id.startsWith('cl-'))return;
+ if(id==='cl-tl'||id==='cl-ts'){MODE=id==='cl-ts'?'sign':'login';ui();return}
+ if(id==='cl-len'||id==='cl-lbn'){lang=id==='cl-lbn'?'bn':'en';LS.setItem('lang',lang);ui();return}
+ if(id==='cl-eye'){const p=$$('cl-pw');if(p)p.type=p.type==='password'?'text':'password';return}
+ if(busy)return;const em=()=>(($$('cl-em')||{}).value||'').trim(),pw=()=>($$('cl-pw')||{}).value||'';busy=true;setM(t('wait'));
  try{
   if(id==='cl-login'||id==='cl-sign'){if(!em()||!pw())throw Error('E_EMPTY');const r=await login(em(),pw(),id==='cl-sign');
-   if(r==='confirm'){setM('✓ অ্যাকাউন্ট খোলা হয়েছে। ইমেইলে পাঠানো লিংকে ক্লিক করে নিশ্চিত করুন, তারপর লগইন করুন।')}
-   else{const ch=await doSync(true);if(ch){if(!sessionStorage.getItem('rl')){sessionStorage.setItem('rl','1');location.reload();return}}ui();window.scrollTo&&window.scrollTo(0,0);setM('✓ লগইন হয়েছে, তথ্য সিঙ্ক হয়েছে।')}}
-  else if(id==='cl-forgot'){if(!em())throw Error('E_EMAIL');await api('/auth/v1/recover',{method:'POST',body:JSON.stringify({email:em()})});setM('✓ পাসওয়ার্ড বদলানোর লিংক ইমেইলে পাঠানো হয়েছে।')}
-  else if(id==='cl-setpw'){if(pw().length<6)throw Error('E_PW');await api('/auth/v1/user',{method:'PUT',body:JSON.stringify({password:pw()})},REC.at);REC=null;ui();setM('✓ পাসওয়ার্ড বদলেছে, এবার লগইন করুন।')}
-  else if(id==='cl-sync'){const ch=await doSync(true);if(ch&&!sessionStorage.getItem('rl')){sessionStorage.setItem('rl','1');location.reload();return}sessionStorage.removeItem('rl');ui();setM('✓ সিঙ্ক সম্পন্ন।')}
-  else if(id==='cl-out'||id==='cl-outx'){const x=id==='cl-outx';try{if(LS.getItem('dirty'))await doSync(false)}catch{if(x){setM('⚠ সিঙ্ক বাকি আছে। ইন্টারনেট ছাড়া তথ্য মুছলে হারিয়ে যাবে, ইন্টারনেট চালু করে আবার চেষ্টা করুন।');return}}
-   if(x&&!confirm('এই ডিভাইস থেকে সব তথ্য মুছে যাবে (অ্যাকাউন্টে জমা থাকবে)। নিশ্চিত?'))return;out(x)}
+   if(r==='confirm'){setM(t('okConf'))}
+   else{const ch=await doSync(true);if(ch){if(!sessionStorage.getItem('rl')){sessionStorage.setItem('rl','1');location.reload();return}}ui();window.scrollTo&&window.scrollTo(0,0);setM(t('okIn'))}}
+  else if(id==='cl-forgot'){if(!em())throw Error('E_EMAIL');await api('/auth/v1/recover',{method:'POST',body:JSON.stringify({email:em()})});setM(t('okRes'))}
+  else if(id==='cl-setpw'){if(pw().length<6)throw Error('E_PW');await api('/auth/v1/user',{method:'PUT',body:JSON.stringify({password:pw()})},REC.at);REC=null;ui();setM(t('okPw'))}
+  else if(id==='cl-sync'){if(el&&el.classList)el.classList.add('spin');const ch=await doSync(true);if(ch&&!sessionStorage.getItem('rl')){sessionStorage.setItem('rl','1');location.reload();return}sessionStorage.removeItem('rl');ui();setM(t('okSync'))}
+  else if(id==='cl-out'||id==='cl-outx'){const x=id==='cl-outx';try{if(LS.getItem('dirty'))await doSync(false)}catch{if(x){setM('⚠ '+t('outW'));return}}
+   if(x&&!confirm(t('outC')))return;out(x)}
  }catch(err){setM('⚠ '+emsg(err))}finally{busy=false}}
 try{const hp=new URLSearchParams(location.hash.slice(1));if(hp.get('type')==='recovery'&&hp.get('access_token')){REC={at:hp.get('access_token')};location.hash='#account'}}catch{}
-const b0=$$('acb'),g0=$$('gb');if(b0)b0.addEventListener('click',onClick);if(g0)g0.addEventListener('click',onClick);
+const b0=$$('acb'),g0=$$('gb');if(b0)b0.addEventListener('click',onClick);if(g0){g0.addEventListener('click',onClick);g0.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();onClick({target:$$('cl-login')||$$('cl-sign')||$$('cl-setpw')})}})}
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&A&&Date.now()-(+LS.getItem('lts')||0)>60000)startSync()});
 window.addEventListener&&window.addEventListener('online',()=>{if(A)startSync()});
 window.__cl={login,doSync,startSync,out,snap,merge,onClick};
+try{const mm=document.getElementById('m'),bgb=document.getElementById('bg');if(mm&&bgb&&window.MutationObserver)new MutationObserver(()=>bgb.setAttribute('aria-expanded',String(mm.classList.contains('on')))).observe(mm,{attributes:true,attributeFilter:['class']})}catch{}
 ui();startSync();
 })();
 /*CL-END*/
