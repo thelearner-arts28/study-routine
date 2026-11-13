@@ -77,7 +77,7 @@ main{max-width:980px;margin:0 auto;padding:12px 14px 40px}
 <body>
 <div id="gate"></div>
 <div id="app" class="hide">
-  <header class="bar"><h1>🛡️ <span id="ttl">Admin panel</span></h1><span class="em" id="who"></span><span id="lp"></span><button id="out">Log out</button></header>
+  <header class="bar"><h1>🛡️ <span id="ttl">Admin panel</span> <a href="./" style="color:#fff;font-size:.75rem;font-weight:500;opacity:.9;margin-left:6px;text-decoration:none">← site · v19</a></h1><span class="em" id="who"></span><span id="lp"></span><button id="out">Log out</button></header>
   <nav class="tabs" id="tabs"></nav>
   <main id="main"></main>
 </div>
@@ -113,7 +113,7 @@ const pill=()=>`<div class="lt"><button data-l="en" class="${lang==='en'?'on':''
 function gate(){const e0=($('ge')||{}).value||'';$('gate').innerHTML=`<div class="card"><div class="top"><div class="sh">🛡️</div>${pill()}</div><h2>${t('si')}</h2><p class="mut" style="margin:0 0 12px">${t('sub')}</p>
  <div class="fd"><input id="ge" type="email" placeholder="${t('em')}" aria-label="${t('em')}" autocomplete="email" value="${esc(e0)}"></div>
  <div class="fd"><input id="gp" type="password" placeholder="${t('pw')}" aria-label="${t('pw')}" autocomplete="current-password"></div>
- <button id="gb" style="width:100%;padding:13px;border-radius:14px">${t('go')}</button><p class="msg" id="gm" ${gMsg?'':''}>${esc(gMsg)}</p></div>`}
+ <button id="gb" style="width:100%;padding:13px;border-radius:14px">${t('go')}</button><p class="msg" id="gm">${esc(gMsg)}</p><div style="text-align:center;margin-top:8px"><a href="./" style="color:var(--mut);font-size:.85rem;text-decoration:none">← Learner site · v19</a></div></div>`}
 async function signin(){const em=$('ge').value.trim(),pw=$('gp').value;if(!em||!pw)return;if(!C()){gMsg='⚠ '+t('nc');gate();return}
  const m=$('gm');m.style.color='';m.textContent=t('wait');$('gb').disabled=true;
  try{const j=await api('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email:em,password:pw})},false);setS(j);
