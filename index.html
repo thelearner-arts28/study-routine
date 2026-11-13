@@ -12,12 +12,14 @@
 <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Thelearner">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&text=0123456789&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@500;600;700;800&text=%E0%A7%A6%E0%A7%A7%E0%A7%A8%E0%A7%A9%E0%A7%AA%E0%A7%AB%E0%A7%AC%E0%A7%AD%E0%A7%AE%E0%A7%AF&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#000;--tx:#e8f4ff;--mut:#8fa6bf;--bl:#2f6bff;--cy:#22d3ee;--gl:rgba(255,255,255,.05);--bd:rgba(34,211,238,.2)}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{background:radial-gradient(900px 500px at 85% -10%,rgba(47,107,255,.35),transparent),radial-gradient(700px 500px at -10% 30%,rgba(34,211,238,.16),transparent),var(--bg);background-attachment:fixed;color:var(--tx);font:400 16px/1.7 'Hind Siliguri','Noto Sans Bengali',sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
-h1,h2,h3,.hd{font-family:'Anek Bangla','Hind Siliguri',sans-serif;line-height:1.3}
+body{background:radial-gradient(900px 500px at 85% -10%,rgba(47,107,255,.35),transparent),radial-gradient(700px 500px at -10% 30%,rgba(34,211,238,.16),transparent),var(--bg);background-attachment:fixed;color:var(--tx);font:400 16px/1.7 'Poppins','Noto Sans Bengali','Hind Siliguri',sans-serif;font-variant-numeric:lining-nums tabular-nums;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+h1,h2,h3,.hd{font-family:'Poppins','Noto Sans Bengali','Anek Bangla','Hind Siliguri',sans-serif;line-height:1.3}
 .w{max-width:1000px;margin:auto;padding:0 16px}
 section{padding:38px 0}
 h2{font-size:1.7rem;margin-bottom:6px}
@@ -36,16 +38,16 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
 .hero{padding:44px 0 20px;text-align:center}
 .hero h1{font-size:clamp(1.9rem,7vw,3.2rem)}
 .tag{color:var(--cy);letter-spacing:.2em;font-weight:600;margin:6px 0 14px}
-#clk{font:800 clamp(2.6rem,13vw,5.2rem)/1.1 'Anek Bangla',sans-serif;color:#fff;text-shadow:0 0 28px var(--cy),0 0 60px var(--bl);margin:10px 0 4px}
+#clk{font:800 clamp(2.6rem,13vw,5.2rem)/1.1 'Poppins','Noto Sans Bengali','Anek Bangla',sans-serif;color:#fff;text-shadow:0 0 28px var(--cy),0 0 60px var(--bl);margin:10px 0 4px}
 .per{font-size:.45em;color:var(--cy);margin-right:.2em}
 .row{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.big{font:700 1.6rem 'Anek Bangla',sans-serif;color:var(--cy)}
+.big{font:700 1.6rem 'Poppins','Noto Sans Bengali','Anek Bangla',sans-serif;color:var(--cy)}
 .mut{color:var(--mut);font-size:.92rem}
 .sl{display:flex;gap:12px;align-items:center;padding:12px 14px;margin-bottom:10px;border-radius:16px;background:var(--gl);border:1px solid var(--bd)}
 .sl.now{border-color:var(--cy);box-shadow:0 0 22px rgba(34,211,238,.35)}
 .sl.past{opacity:.55}
 .sl .i{flex:1}
-.sl b{font-family:'Anek Bangla',sans-serif;font-size:1.05rem}
+.sl b{font-family:'Poppins','Noto Sans Bengali','Anek Bangla',sans-serif;font-size:1.05rem}
 .sl input[type=checkbox]{width:24px;height:24px;accent-color:var(--cy)}
 .bell{background:none;border:1px solid var(--bd);color:var(--mut);padding:6px 10px}
 .bell.on{color:var(--cy);border-color:var(--cy)}
@@ -161,7 +163,7 @@ textarea,input[type=text],input[type=date],select{background:#fff!important;colo
 .ring{width:132px;height:132px;border-radius:50%;padding:5px;background:conic-gradient(#2f6bff,#06b6d4,#22c55e,#f59e0b,#ec4899,#8b5cf6,#2f6bff);animation:spin 6s linear infinite;box-shadow:0 10px 30px rgba(47,107,255,.35)}
 .ring .lg{display:block;width:100%;height:100%;border:4px solid #fff;animation:spin 6s linear infinite reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
-.bn{font:800 clamp(1.7rem,8vw,2.6rem)/1.1 'Anek Bangla',sans-serif;background:linear-gradient(90deg,#2f6bff,#06b6d4,#ec4899,#2f6bff);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+.bn{font:800 clamp(1.7rem,8vw,2.6rem)/1.1 'Poppins','Noto Sans Bengali','Anek Bangla',sans-serif;background:linear-gradient(90deg,#2f6bff,#06b6d4,#ec4899,#2f6bff);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
 @keyframes shine{to{background-position:200% center}}
 body::before,body::after{content:"";position:fixed;border-radius:50%;z-index:-1;pointer-events:none;animation:fl 9s ease-in-out infinite alternate}
 body::before{width:300px;height:300px;top:10%;left:-90px;background:radial-gradient(rgba(236,72,153,.28),transparent 70%)}
@@ -184,7 +186,7 @@ td.cur{outline:0;background:#fff3c4!important;animation:pls 1.6s ease-in-out inf
 .nw{color:#dc2626;font-weight:700}
 #cg{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
 .cm{padding:0;overflow:hidden;border-top:0}
-.cmh{color:#fff;padding:10px 14px;display:flex;flex-direction:column}.cmh b{font:700 1.15rem 'Anek Bangla',sans-serif}.cmh small{opacity:.95;font-size:.72rem}
+.cmh{color:#fff;padding:10px 14px;display:flex;flex-direction:column}.cmh b{font:700 1.15rem 'Poppins','Noto Sans Bengali','Anek Bangla',sans-serif}.cmh small{opacity:.95;font-size:.72rem}
 .cmg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:10px}
 .cmg i{font-style:normal;text-align:center;font-size:.72rem;font-weight:700;color:var(--c)}.cmg i.rd{color:#dc2626}
 .cd{display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:10px;padding:3px 0;min-height:42px;background:#f3f7ff}
@@ -233,7 +235,7 @@ td.cur{outline:0;background:#fff3c4!important;animation:pls 1.6s ease-in-out inf
 .ahero .row{display:flex;align-items:center;gap:14px}
 .ahero .lt{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.6)}
 .ahero .lt button{color:#fff!important}.ahero .lt button.on{background:#fff!important;color:#2f6bff!important}
-.av{flex:none;width:68px;height:68px;border-radius:50%;background:#fff;display:grid;place-items:center;font:800 1.9rem 'Anek Bangla','Hind Siliguri',sans-serif;color:#2f6bff;animation:pr 2.4s ease-out infinite}
+.av{flex:none;width:68px;height:68px;border-radius:50%;background:#fff;display:grid;place-items:center;font:800 1.9rem 'Poppins','Noto Sans Bengali','Anek Bangla','Hind Siliguri',sans-serif;color:#2f6bff;animation:pr 2.4s ease-out infinite}
 .ahero .hi{font-size:1.28rem;font-weight:800;line-height:1.25}
 .ahero .em{opacity:.92;font-size:.9rem;word-break:break-all}
 .sy{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.45);padding:4px 11px;border-radius:999px;font-size:.78rem;margin-top:8px}
@@ -242,7 +244,7 @@ td.cur{outline:0;background:#fff3c4!important;animation:pls 1.6s ease-in-out inf
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:12px;margin:16px 0}
 .stl{background:#fff;border-radius:20px;padding:14px;box-shadow:0 8px 22px rgba(47,107,255,.1);border-top:4px solid var(--c);animation:up .5s ease both}
 .stl .ic{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;font-size:1.2rem;background:var(--c2)}
-.stl b{display:block;font:800 1.9rem/1.1 'Anek Bangla','Hind Siliguri',sans-serif;margin-top:8px;color:var(--tx)}
+.stl b{display:block;font:800 1.9rem/1.1 'Poppins','Noto Sans Bengali','Anek Bangla','Hind Siliguri',sans-serif;margin-top:8px;color:var(--tx)}
 .stl span{color:var(--mut);font-size:.85rem}
 .shd{font-weight:700;margin:2px 0 8px;color:var(--tx)}
 .chs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
@@ -327,7 +329,7 @@ td.cur{outline:0;background:#fff3c4!important;animation:pls 1.6s ease-in-out inf
 <div class="g"><div class="td"><select id="qs"></select><select id="qc"></select><select id="qsec"></select><label class="mut"><input type="checkbox" id="qo"> ক্রমানুসারে</label><button id="qgo">শুরু করুন</button><button class="o" id="qls">তালিকা দেখুন</button></div><p class="mut" id="qn"></p></div>
 <div class="g" id="qq" style="display:none;margin-top:14px"></div>
 <div class="g" style="margin-top:14px"><h3>সাম্প্রতিক ফলাফল</h3><div id="qh"></div></div>
-<details class="g" style="margin-top:14px"><summary class="hd" style="cursor:pointer;color:var(--cy)">নিজের প্রশ্ন যোগ করুন</summary><div style="display:grid;gap:8px;margin-top:10px"><select id="as"></select><input type="text" id="ac" placeholder="অধ্যায়ের নাম"><input type="text" id="asec" placeholder="সেকশন (ঐচ্ছিক)"><input type="text" id="aq" placeholder="প্রশ্ন"><input type="text" id="o0" placeholder="ক) অপশন"><input type="text" id="o1" placeholder="খ) অপশন"><input type="text" id="o2" placeholder="গ) অপশন"><input type="text" id="o3" placeholder="ঘ) অপশন"><select id="aa"><option value="0">সঠিক উত্তর: ক</option><option value="1">সঠিক উত্তর: খ</option><option value="2">সঠিক উত্তর: গ</option><option value="3">সঠিক উত্তর: ঘ</option></select><button id="qadd">প্রশ্ন সংরক্ষণ করুন</button></div><h3 style="margin-top:14px">একসাথে অনেক প্রশ্ন (মার্কডাউন)</h3><p class="mut">উপরে বিষয় বেছে নিন। <code># অধ্যায়</code> লাইন থেকে অধ্যায়, <code>### সেকশন</code> লাইন থেকে সেকশন নেবে (না থাকলে উপরের দুই ঘরের লেখা)। প্রশ্ন নম্বর অনুযায়ী সাজাবে। সংক্ষিপ্ত প্রশ্ন-উত্তর ও চার অপশনের MCQ দুটোই চলে; প্রশ্নের নিচে চাইলে একটা লাইনে <code>হিন্ট: ...</code> লিখে নিজের ইঙ্গিত দিতে পারেন (না দিলে অ্যাপ নিজে বানাবে)। সংক্ষিপ্ত প্রশ্নে অনুশীলনের সময় প্রশ্নের ধরন (নাম, ঠিকানা, তারিখ, সাল, সংখ্যা) বুঝে নিজে ভুল অপশন বানিয়ে MCQ করে দেবে। <b>পেস্ট করলে বা ফাইল দিলেই নিজে থেকে সংরক্ষণ হয়ে যাবে</b>; হাতে টাইপ করলে শেষে "সব সংরক্ষণ করুন" চাপুন।</p><textarea id="md" rows="10" placeholder="# গন্তব্য কাবুল — সৈয়দ মুজতবা আলী&#10;&#10;### লেখক-পরিচিতি অংশ থেকে:&#10;১. **গল্পটির লেখক কে?**&#10;* **উত্তর:** সৈয়দ মুজতবা আলী।&#10;&#10;২. **তিনি কোথায় জন্মগ্রহণ করেন?**&#10;* **উত্তর:** আসামের করিমগঞ্জে।&#10;&#10;### ১০৪ নং পৃষ্ঠা থেকে:&#10;৩. **...**&#10;* **উত্তর:** ..." style="width:100%;background:#000;color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:10px;font:inherit"></textarea><label class="mut">অথবা ফাইল আপলোড (.md / .txt, একাধিক হলেও চলবে): <input type="file" id="mdf" accept=".md,.markdown,.txt,text/markdown,text/plain" multiple></label><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="o" id="mdp">যাচাই করুন</button><button id="mds" style="display:none">সব সংরক্ষণ করুন</button></div><p class="mut" id="mdr"></p><div id="modp" style="display:none"></div><h3 style="margin-top:14px" id="pubh">📤 অনুমোদনের জন্য জমা</h3><p class="mut" id="pubd">আপনার যোগ করা প্রশ্ন মালিকের কাছে যাবে। মালিক অনুমোদন করলে তবেই সবার সামনে দেখা যাবে।</p><label class="mut" style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><input type="checkbox" id="apub" checked><span id="publ">নতুন প্রশ্ন যোগ করলেই নিজে থেকে জমা হোক</span></label><div style="display:flex;gap:8px;flex-wrap:wrap"><button id="pub">📤 আমার সব প্রশ্ন জমা দিন</button></div><p class="mut" id="pubr"></p><h3 style="margin-top:14px">আমার যোগ করা প্রশ্ন</h3><div id="ml"></div></details></section>
+<details class="g" style="margin-top:14px"><summary class="hd" style="cursor:pointer;color:var(--cy)">নিজের প্রশ্ন যোগ করুন</summary><div style="display:grid;gap:8px;margin-top:10px"><select id="as"></select><input type="text" id="ac" placeholder="অধ্যায়ের নাম"><input type="text" id="asec" placeholder="সেকশন (ঐচ্ছিক)"><input type="text" id="aq" placeholder="প্রশ্ন"><input type="text" id="o0" placeholder="ক) অপশন"><input type="text" id="o1" placeholder="খ) অপশন"><input type="text" id="o2" placeholder="গ) অপশন"><input type="text" id="o3" placeholder="ঘ) অপশন"><select id="aa"><option value="0">সঠিক উত্তর: ক</option><option value="1">সঠিক উত্তর: খ</option><option value="2">সঠিক উত্তর: গ</option><option value="3">সঠিক উত্তর: ঘ</option></select><button id="qadd">প্রশ্ন সংরক্ষণ করুন</button></div><h3 style="margin-top:14px">একসাথে অনেক প্রশ্ন (মার্কডাউন)</h3><p class="mut">উপরে বিষয় বেছে নিন। <code># অধ্যায়</code> লাইন থেকে অধ্যায়, <code>### সেকশন</code> লাইন থেকে সেকশন নেবে (না থাকলে উপরের দুই ঘরের লেখা)। প্রশ্ন নম্বর অনুযায়ী সাজাবে। সংক্ষিপ্ত প্রশ্ন-উত্তর ও চার অপশনের MCQ দুটোই চলে; প্রশ্নের নিচে চাইলে একটা লাইনে <code>হিন্ট: ...</code> লিখে নিজের ইঙ্গিত দিতে পারেন (না দিলে অ্যাপ নিজে বানাবে)। সংক্ষিপ্ত প্রশ্নে অনুশীলনের সময় প্রশ্নের ধরন (নাম, ঠিকানা, তারিখ, সাল, সংখ্যা) বুঝে নিজে ভুল অপশন বানিয়ে MCQ করে দেবে। <b>পেস্ট করলে বা ফাইল দিলেই নিজে থেকে সংরক্ষণ হয়ে যাবে</b>; হাতে টাইপ করলে শেষে "সব সংরক্ষণ করুন" চাপুন।</p><textarea id="md" rows="10" placeholder="# গন্তব্য কাবুল — সৈয়দ মুজতবা আলী&#10;&#10;### লেখক-পরিচিতি অংশ থেকে:&#10;১. **গল্পটির লেখক কে?**&#10;* **উত্তর:** সৈয়দ মুজতবা আলী।&#10;&#10;২. **তিনি কোথায় জন্মগ্রহণ করেন?**&#10;* **উত্তর:** আসামের করিমগঞ্জে।&#10;&#10;### ১০৪ নং পৃষ্ঠা থেকে:&#10;৩. **...**&#10;* **উত্তর:** ..." style="width:100%;background:#000;color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:10px;font:inherit"></textarea><label class="mut">অথবা ফাইল আপলোড (.md / .txt, একাধিক হলেও চলবে): <input type="file" id="mdf" accept=".md,.markdown,.txt,text/markdown,text/plain" multiple></label><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="o" id="mdp">যাচাই করুন</button><button id="mds" style="display:none">সব সংরক্ষণ করুন</button></div><p class="mut" id="mdr"></p><h3 style="margin-top:14px" id="pubh">📤 অনুমোদনের জন্য জমা</h3><p class="mut" id="pubd">আপনার যোগ করা প্রশ্ন মালিকের কাছে যাবে। মালিক অনুমোদন করলে তবেই সবার সামনে দেখা যাবে।</p><label class="mut" style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><input type="checkbox" id="apub" checked><span id="publ">নতুন প্রশ্ন যোগ করলেই নিজে থেকে জমা হোক</span></label><div style="display:flex;gap:8px;flex-wrap:wrap"><button id="pub">📤 আমার সব প্রশ্ন জমা দিন</button></div><p class="mut" id="pubr"></p><h3 style="margin-top:14px">আমার যোগ করা প্রশ্ন</h3><div id="ml"></div></details></section>
 <section id="focus"><h2>ফোকাস টাইমার</h2><p class="sub">নির্দিষ্ট সময় মন দিয়ে পড়ুন, তারপর ছোট বিরতি নিন।</p><div class="g" style="text-align:center"><div class="mut" id="fmode">ফোকাস</div><div class="big" id="ft" style="font-size:3.4rem;color:#fff;text-shadow:0 0 24px var(--cy)">২৫:০০</div>
 <div style="display:flex;gap:8px;justify-content:center;margin:12px 0"><button id="fs">শুরু করুন</button><button class="o" id="fr">রিসেট</button></div>
 <label class="mut">ফোকাস <select id="fm"><option value="25">২৫</option><option value="45">৪৫</option><option value="50">৫০</option></select> মিনিট</label> &nbsp; <label class="mut">বিরতি <select id="fb"><option value="5">৫</option><option value="10">১০</option></select> মিনিট</label>
@@ -739,10 +741,10 @@ async function doSync(apply){const d0=LS.getItem('dirty'),r=await pull(),c=r.key
 
 const pqKey=q=>q.s+'|'+q.c+'|'+q.q;
 const roleUI=()=>{const g=id=>document.getElementById(id),set=(id,tx)=>{const e=g(id);if(e)e.textContent=tx};
- if(ISADM){set('pubh','🌐 প্রকাশ (আপনি মালিক: সরাসরি সবার জন্য)');set('pubd','আপনার যোগ করা প্রশ্ন সরাসরি সবার জন্য প্রকাশ হয়। অন্যদের জমা দেওয়া প্রশ্ন ওপরের অনুমোদনের তালিকায় আসে।');set('publ','নতুন প্রশ্ন যোগ করলেই নিজে থেকে সবার জন্য প্রকাশ হোক');set('pub','🌐 আমার সব প্রশ্ন এখনই প্রকাশ করুন')}
+ if(ISADM){set('pubh','🌐 প্রকাশ (আপনি মালিক: সরাসরি সবার জন্য)');set('pubd','আপনার যোগ করা প্রশ্ন সরাসরি সবার জন্য প্রকাশ হয়। অন্যদের জমা দেওয়া প্রশ্ন অ্যাডমিন প্যানেলে (admin.html) অনুমোদনের জন্য আসে।');set('publ','নতুন প্রশ্ন যোগ করলেই নিজে থেকে সবার জন্য প্রকাশ হোক');set('pub','🌐 আমার সব প্রশ্ন এখনই প্রকাশ করুন')}
  else{set('pubh','📤 অনুমোদনের জন্য জমা');set('pubd','আপনার যোগ করা প্রশ্ন মালিকের কাছে যাবে। মালিক অনুমোদন করলে তবেই সবার সামনে দেখা যাবে।');set('publ','নতুন প্রশ্ন যোগ করলেই নিজে থেকে জমা হোক');set('pub','📤 আমার সব প্রশ্ন জমা দিন')}
  renderMod()};
-async function chkAdmin(){if(!A||!C()){ISADM=null;roleUI();return}try{const r=await api('/rest/v1/app_admins?select=user_id&user_id=eq.'+A.uid,{},true);ISADM=Array.isArray(r)&&r.length>0}catch{ISADM=false}roleUI();if(ISADM)refreshMod().catch(()=>{})}
+async function chkAdmin(){if(!A||!C()){ISADM=null;roleUI();return}try{const r=await api('/rest/v1/app_admins?select=user_id&user_id=eq.'+A.uid,{},true);ISADM=Array.isArray(r)&&r.length>0}catch{ISADM=false}roleUI();if(ISADM){ui();refreshMod().catch(()=>{});if(!LS.getItem('admBl'))pubNew(true).then(n=>{LS.setItem('admBl','1');if(n)pmsg('✓ আপনার আগের '+n+'টি প্রশ্ন সবার জন্য প্রকাশিত হয়েছে।')}).catch(()=>{})}}
 async function refreshMine(){const rows=await api('/rest/v1/public_questions?select=key,status&owner=eq.'+A.uid+'&limit=1000',{},true);mine={};rows.forEach(r=>{mine[r.key]=r.status});PST=Object.assign({},mine);if(typeof renderMq==='function')renderMq()}
 async function refreshPQ(){const all=[];for(let off=0;;off+=1000){const rows=await api('/rest/v1/public_questions?select=key,owner,data&status=eq.approved&order=id.asc&limit=1000&offset='+off,{},true);all.push(...rows);if(rows.length<1000)break}
  pown={};all.forEach(r=>{pown[r.key]=r.owner});PQ=all.map(r=>r.data).filter(okQ);try{localStorage.setItem('pqc',JSON.stringify(PQ))}catch{}
@@ -753,7 +755,7 @@ async function pubNew(force){if(!A||!C()||pbusy)return 0;if(ISADM===null)await c
  await refreshPQ();if(ISADM)refreshMod().catch(()=>{});return pend.length}
 async function unpub(q){if(!A||!C())return;const k=pqKey(q);if(!mine[k])return;try{await api('/rest/v1/public_questions?key=eq.'+encodeURIComponent(k)+'&owner=eq.'+A.uid,{method:'DELETE',headers:{Prefer:'return=minimal'}},true);pqSig='';await pqCheck(true)}catch{}}
 async function refreshMod(){if(!ISADM||!A)return;PEND=await api('/rest/v1/public_questions?select=id,key,owner_email,data&status=eq.pending&order=id.asc&limit=200',{},true);renderMod()}
-function renderMod(){const e=document.getElementById('modp'),c=document.getElementById('cl-pd');if(c)c.textContent=(lang==='bn'?'মালিক · ':'Owner · ')+PEND.length+(lang==='bn'?' অনুমোদনের অপেক্ষায়':' pending');if(!e)return;if(!ISADM){e.style.display='none';e.innerHTML='';return}
+function renderMod(){const e=document.getElementById('modp'),c=document.getElementById('cl-pd');if(c)c.textContent='🛡️ '+(lang==='bn'?'অ্যাডমিন প্যানেল · ':'Admin panel · ')+PEND.length+(lang==='bn'?' অপেক্ষায়':' pending');if(!e)return;if(!ISADM){e.style.display='none';e.innerHTML='';return}
  e.style.display='';const L='কখগঘ';
  e.innerHTML=`<h3 style="margin-top:14px">🛡️ অনুমোদনের অপেক্ষায় (${bn(PEND.length)})</h3>`+(PEND.length?`<div style="margin-bottom:8px"><button id="ap-all">✓ সবগুলো অনুমোদন করুন</button></div>`+PEND.map(r=>{const d=r.data||{};return`<div class="ti" style="align-items:flex-start;gap:8px"><span><b>${esc(d.q)}</b><br><span class="mut">${esc(d.s)} · ${esc(d.c)}${d.sec?' · '+esc(d.sec):''}<br>${d.o&&d.o.length?esc(d.o.map((x,i)=>L[i]+') '+x).join('  '))+'<br>✓ '+esc(L[d.a]):'উত্তর: '+esc(d.t||'')}${r.owner_email?'<br>👤 '+esc(r.owner_email):''}</span></span><span style="display:flex;gap:6px;flex:none"><button data-ap="${r.id}">✓</button><button class="o" data-rj="${r.id}">✗</button></span></div>`}).join(''):'<p class="mut">অনুমোদনের জন্য কোনো প্রশ্ন নেই।</p>')}
 let pqN=0;
@@ -786,7 +788,7 @@ function ui(){const b=$$('acb'),g=$$('gb');if(!b)return;setLock();applyLang();co
   cnt=k=>{const v=gj(k,null);return Array.isArray(v)?v.length:v&&typeof v==='object'?Object.values(v).filter(x=>x!==''&&x!=null&&!(Array.isArray(x)&&!x.length)).length:0},fm=n=>n.toLocaleString(lang==='bn'?'bn-BD':'en-US'),
   st=stx(),
   tiles=[['📝',cnt('mq'),'stQ','#2f6bff','#e4edff'],['🗒️',cnt('nt'),'stN','#06b6d4','#dff7fc'],['🎯',cnt('mh'),'stM','#f472b6','#ffe5f1'],['⏰',cnt('al'),'stA','#f59e0b','#fff1d1']];
-  b.innerHTML=`<div class="acx"><div class="ahero"><div class="tp">${pill()}</div><div class="row"><div class="av">${esc(A.email.charAt(0).toUpperCase())}</div><div><div class="hi">${gr}, ${esc(nm)} 👋</div><div class="em">${esc(A.email)}</div><span class="sy${d?' w':''}"><i></i><em id="cl-st" style="font-style:normal">${st}</em></span>${ISADM?`<a class="sy" href="#mcq" id="cl-pd" style="margin-left:6px;color:#fff;text-decoration:none">${lang==='bn'?'মালিক · ':'Owner · '}${PEND.length}${lang==='bn'?' অনুমোদনের অপেক্ষায়':' pending'}</a>`:''}</div></div></div>
+  b.innerHTML=`<div class="acx"><div class="ahero"><div class="tp">${pill()}</div><div class="row"><div class="av">${esc(A.email.charAt(0).toUpperCase())}</div><div><div class="hi">${gr}, ${esc(nm)} 👋</div><div class="em">${esc(A.email)}</div><span class="sy${d?' w':''}"><i></i><em id="cl-st" style="font-style:normal">${st}</em></span>${ISADM?`<a class="sy" href="admin.html" id="cl-pd" style="margin-left:6px;color:#fff;text-decoration:none">🛡️ ${lang==='bn'?'অ্যাডমিন প্যানেল · ':'Admin panel · '}${PEND.length}${lang==='bn'?' অপেক্ষায়':' pending'}</a>`:''}</div></div></div>
 <div class="stats">${tiles.map((x,i)=>`<div class="stl" style="--c:${x[3]};--c2:${x[4]};animation-delay:${i*.07}s"><div class="ic">${x[0]}</div><b data-n="${x[1]}">${fm(x[1])}</b><span>${t(x[2])}</span></div>`).join('')}</div>
 <div class="shd">${t('sh')}</div><div class="chs">${t('chs').split('|').map(x=>`<span>${x}</span>`).join('')}</div>
 <div class="acts"><button id="cl-sync"><span class="ri">↻</span>${t('syncNow')}</button><button class="o" id="cl-out">${t('out')}</button><button class="dg" id="cl-outx">${t('outx')}</button></div><p class="mut" id="cl-m" style="margin-top:10px"></p></div>`;
