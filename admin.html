@@ -7,16 +7,14 @@
 <meta name="theme-color" content="#2f6bff">
 <title>Admin · Thelearner.arts28</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&text=0123456789&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@500;600;700;800&text=%E0%A7%A6%E0%A7%A7%E0%A7%A8%E0%A7%A9%E0%A7%AA%E0%A7%AB%E0%A7%AC%E0%A7%AD%E0%A7%AE%E0%A7%AF&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="config.js"></script>
 <style>
 :root{--bg:#f6f3ff;--tx:#17163a;--mut:#667090;--bl:#4f46e5;--bd:#e4dffb;--ok:#059669;--er:#e11d48;--g1:linear-gradient(135deg,#2f6bff,#8b5cf6);--g2:linear-gradient(120deg,#2f6bff 0%,#7c3aed 55%,#ec4899 100%)}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;min-height:100vh;color:var(--tx);font:400 16px/1.6 'Poppins','Noto Sans Bengali','Hind Siliguri',sans-serif;font-variant-numeric:lining-nums tabular-nums;background:radial-gradient(circle at 8% 6%,rgba(47,107,255,.18),transparent 38%),radial-gradient(circle at 95% 12%,rgba(236,72,153,.16),transparent 36%),radial-gradient(circle at 80% 95%,rgba(6,182,212,.16),transparent 40%),var(--bg);background-attachment:fixed}
-h1,h2,h3{font-family:'Poppins','Noto Sans Bengali','Anek Bangla','Hind Siliguri',sans-serif;margin:0}
+body{margin:0;min-height:100vh;color:var(--tx);font:400 16px/1.6 'Poppins','Noto Sans Bengali',sans-serif;font-variant-numeric:lining-nums tabular-nums;background:radial-gradient(circle at 8% 6%,rgba(47,107,255,.18),transparent 38%),radial-gradient(circle at 95% 12%,rgba(236,72,153,.16),transparent 36%),radial-gradient(circle at 80% 95%,rgba(6,182,212,.16),transparent 40%),var(--bg);background-attachment:fixed}
+h1,h2,h3{font-family:'Poppins','Noto Sans Bengali',sans-serif;margin:0}
 button{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:10px 18px;font-weight:700;color:#fff;background:var(--g1);box-shadow:0 8px 20px rgba(79,70,229,.3);transition:transform .15s,box-shadow .15s,filter .15s}
 button:hover{transform:translateY(-1px);filter:saturate(1.15)}
 button:active{transform:scale(.97)}
@@ -99,7 +97,7 @@ main{max-width:1000px;margin:0 auto;padding:12px 16px 50px}
 .st{position:relative;overflow:hidden;color:#fff;border-radius:24px;padding:18px;background:var(--gr);box-shadow:0 14px 30px var(--sh)}
 .st::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-34px;top:-40px;background:rgba(255,255,255,.18)}
 .st .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;background:rgba(255,255,255,.25);backdrop-filter:blur(6px)}
-.st b{display:block;font:800 2.3rem/1.1 'Poppins','Noto Sans Bengali','Anek Bangla',sans-serif;margin-top:10px}
+.st b{display:block;font:800 2.3rem/1.1 'Poppins','Noto Sans Bengali',sans-serif;margin-top:10px}
 .st span{opacity:.95;font-size:.88rem;font-weight:500}
 .pn{background:rgba(255,255,255,.92);border-radius:24px;padding:18px;box-shadow:0 12px 34px rgba(79,70,229,.1);margin-top:16px;backdrop-filter:blur(8px)}
 .pn h3{font-size:1.12rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
@@ -141,16 +139,32 @@ main{padding-bottom:110px}
 }
 @media(max-width:600px){.row{flex-wrap:wrap}.row .tx{flex:1 1 calc(100% - 56px)}.row .acts{width:100%}.row .acts button{flex:1}.row .acts .dg[data-rj]{flex:none}.row .ava{width:34px;height:34px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.nm{font-family:'Poppins','Noto Sans Bengali',sans-serif;font-size:1.07em;letter-spacing:.015em;font-variant-numeric:lining-nums tabular-nums;font-synthesis:none}
 </style>
 </head>
 <body>
 <div id="gate"></div>
 <div id="app" class="hide">
-  <header class="bar"><div class="hl"><div class="av" id="av">A</div><div><div class="hi" id="hi"></div><div class="hs"><span id="who"></span> · <a href="./">← site · v20</a></div></div></div><div class="hr"><span class="live" id="live"><i></i><b id="lv">Live</b></span><span id="lp"></span><button id="out">Log out</button></div></header>
+  <header class="bar"><div class="hl"><div class="av" id="av">A</div><div><div class="hi" id="hi"></div><div class="hs"><span id="who"></span> · <a href="./">← site · v21</a></div></div></div><div class="hr"><span class="live" id="live"><i></i><b id="lv">Live</b></span><span id="lp"></span><button id="out">Log out</button></div></header>
   <nav class="tabs" id="tabs"></nav>
   <main id="main"></main>
 </div>
 <div id="toast" class="toast hide"></div>
+<script>
+/* সংখ্যা স্পষ্ট করা: পেজের সব অঙ্ক আলাদা মোটা ফন্টে দেখায় */
+(()=>{const RE=/[0-9০-৯]/,SP=/([0-9০-৯]+(?:[.,:][0-9০-৯]+)*)/,SKIP=/^(SCRIPT|STYLE|TEXTAREA|OPTION|SELECT|INPUT|TITLE|NOSCRIPT|TEXT)$/i,cfg={childList:true,subtree:true,characterData:true};
+let timer=0,mo;const pend=new Set();
+const weight=(el,c)=>{if(c.has(el))return c.get(el);const w=parseInt(getComputedStyle(el).fontWeight)||400,r=w>=700?800:600;c.set(el,r);return r};
+function wrap(root){if(!root||(root.nodeType!==1&&root.nodeType!==11))return;const cache=new Map(),L=[],w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){const p=n.parentElement;if(!p||SKIP.test(p.nodeName)||p.classList.contains('nm')||p.closest('svg,select,textarea,[contenteditable="true"]'))return NodeFilter.FILTER_REJECT;return RE.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});let n;while(n=w.nextNode())L.push(n);
+ L.forEach(n=>{const parts=n.nodeValue.split(SP);if(parts.length<2)return;const p=n.parentElement,wt=weight(p,cache),f=document.createDocumentFragment();parts.forEach((s,i)=>{if(!s)return;if(i%2&&!/[A-Za-z]$/.test(parts[i-1]||'')){const sp=document.createElement('span');sp.className='nm';sp.style.fontWeight=wt;sp.textContent=s;f.appendChild(sp)}else f.appendChild(document.createTextNode(s))});p.replaceChild(f,n)})}
+function flush(){timer=0;mo.disconnect();const r=[...pend];pend.clear();r.forEach(x=>{if(x&&x.isConnected)wrap(x)});mo.observe(document.documentElement,cfg)}
+mo=new MutationObserver(ms=>{for(const m of ms){if(m.type==='characterData'){const p=m.target.parentElement;if(p&&!p.classList.contains('nm'))pend.add(p)}else m.addedNodes.forEach(a=>{if(a.nodeType===1){if(!a.classList.contains('nm'))pend.add(a)}else if(a.nodeType===3&&a.parentElement&&!a.parentElement.classList.contains('nm'))pend.add(a.parentElement)})}flush()});
+mo.observe(document.documentElement,cfg);
+const first=()=>wrap(document.body);document.readyState==='loading'?document.addEventListener('DOMContentLoaded',first):first();
+window.__nm=wrap;
+})();
+</script>
 <script>
 (()=>{
 const C=()=>{const c=window.CLOUD;return c&&c.url&&c.key?c:null},LS=localStorage,$=id=>document.getElementById(id);
@@ -187,7 +201,7 @@ function gate(){const e0=($('ge')||{}).value||'',fx=[['🛡️','7%','16%','0s']
  <div class="card"><div class="top"><h2>${t('si')}</h2>${pill()}</div><p class="mut" style="margin:0 0 6px">${t('sub')}</p>
  <div class="fd"><span class="ic">✉️</span><input id="ge" type="email" placeholder="${t('em')}" aria-label="${t('em')}" autocomplete="email" value="${esc(e0)}"></div>
  <div class="fd"><span class="ic">🔒</span><input id="gp" type="password" placeholder="${t('pw')}" aria-label="${t('pw')}" autocomplete="current-password"><button type="button" class="ey" data-eye aria-label="show">👁</button></div>
- <button id="gb" class="go">${t('go')}</button><p class="msg" id="gm">${esc(gMsg)}</p><div class="back"><a href="./">← Learner site · v20</a></div></div></div>`}
+ <button id="gb" class="go">${t('go')}</button><p class="msg" id="gm">${esc(gMsg)}</p><div class="back"><a href="./">← Learner site · v21</a></div></div></div>`}
 async function signin(){const em=$('ge').value.trim(),pw=$('gp').value;if(!em||!pw)return;if(!C()){gMsg='⚠ '+t('nc');gate();return}
  const m=$('gm');m.style.color='';m.textContent=t('wait');$('gb').disabled=true;
  try{const j=await api('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email:em,password:pw})},false);setS(j);
