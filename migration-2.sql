@@ -193,3 +193,11 @@ from (values
   ('বাংলা', 'গদ্য', 'গন্তব্য কাবুল', '', 'গন্তব্য কাবুল,সৈয়দ মুজতবা আলী,মুজতবা,কাবুল,পেশাওয়ার,খাইবার,সর্দারজি,আফগান,জালালাবাদ,দেশে বিদেশে,ফিরিঙ্গি,পুস্তিন,টাঙা,হাওড়া স্টেশন,বুখারা,শিলওয়ার', 1)
 ) as v(subject, grp, chapter, lesson, keywords, sort)
 where not exists (select 1 from public.taxonomy t where t.subject = v.subject and t.chapter = v.chapter and t.grp = v.grp);
+
+-- ============ ব্লক ছ: "প্রশ্ন-সহ অফিসিয়াল সাইট খোলা" লিংক (বিনামূল্যের লঞ্চারের জন্য) ============
+-- না চালালেও লঞ্চার চলে (অ্যাপের ভেতরে ডিফল্ট আছে); চালালে অ্যাডমিন প্যানেল থেকে লিংক বদলানো যাবে।
+alter table public.ai_providers add column if not exists launch_url text not null default '';
+update public.ai_providers set launch_url = 'https://chatgpt.com/?q={q}' where slug = 'chatgpt' and launch_url = '';
+update public.ai_providers set launch_url = 'https://claude.ai/new?q={q}' where slug = 'claude' and launch_url = '';
+update public.ai_providers set launch_url = 'https://www.perplexity.ai/search?q={q}' where slug = 'perplexity' and launch_url = '';
+update public.ai_providers set launch_url = 'https://copilot.microsoft.com/?q={q}' where slug = 'copilot' and launch_url = '';
