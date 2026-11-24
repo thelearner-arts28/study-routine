@@ -13,8 +13,8 @@
 :root{--bg:#f6f3ff;--tx:#17163a;--mut:#667090;--bl:#4f46e5;--bd:#e4dffb;--ok:#059669;--er:#e11d48;--g1:linear-gradient(135deg,#2f6bff,#8b5cf6);--g2:linear-gradient(120deg,#2f6bff 0%,#7c3aed 55%,#ec4899 100%)}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;min-height:100vh;color:var(--tx);font:400 16px/1.6 'Poppins','Noto Sans Bengali',sans-serif;font-variant-numeric:lining-nums tabular-nums;background:radial-gradient(circle at 8% 6%,rgba(47,107,255,.18),transparent 38%),radial-gradient(circle at 95% 12%,rgba(236,72,153,.16),transparent 36%),radial-gradient(circle at 80% 95%,rgba(6,182,212,.16),transparent 40%),var(--bg);background-attachment:fixed}
-h1,h2,h3{font-family:'Poppins','Noto Sans Bengali',sans-serif;margin:0}
+body{margin:0;min-height:100vh;color:var(--tx);font:400 16px/1.6 'Ruposhi','Poppins','Noto Sans Bengali',sans-serif;font-variant-numeric:lining-nums tabular-nums;background:radial-gradient(circle at 8% 6%,rgba(47,107,255,.18),transparent 38%),radial-gradient(circle at 95% 12%,rgba(236,72,153,.16),transparent 36%),radial-gradient(circle at 80% 95%,rgba(6,182,212,.16),transparent 40%),var(--bg);background-attachment:fixed}
+h1,h2,h3{font-family:'Ruposhi','Poppins','Noto Sans Bengali',sans-serif;margin:0}
 button{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:10px 18px;font-weight:700;color:#fff;background:var(--g1);box-shadow:0 8px 20px rgba(79,70,229,.3);transition:transform .15s,box-shadow .15s,filter .15s}
 button:hover{transform:translateY(-1px);filter:saturate(1.15)}
 button:active{transform:scale(.97)}
@@ -74,7 +74,7 @@ header.bar::before{width:160px;height:160px;right:-40px;top:-80px}
 header.bar::after{width:90px;height:90px;left:35%;bottom:-55px;background:rgba(251,191,36,.25)}
 header.bar>*{position:relative;z-index:1}
 .hl{display:flex;align-items:center;gap:12px;flex:1;min-width:210px}
-.av{flex:none;width:50px;height:50px;border-radius:50%;background:#fff;color:var(--bl);display:grid;place-items:center;font:800 1.4rem 'Poppins','Noto Sans Bengali',sans-serif;animation:pulse 2.6s ease-out infinite}
+.av{flex:none;width:50px;height:50px;border-radius:50%;background:#fff;color:var(--bl);display:grid;place-items:center;font:800 1.4rem 'Ruposhi','Poppins','Noto Sans Bengali',sans-serif;animation:pulse 2.6s ease-out infinite}
 .hi{font-weight:800;font-size:1.08rem;line-height:1.25}
 .hs{font-size:.78rem;opacity:.92;word-break:break-all}
 .hs a{color:#fff;opacity:.9;text-decoration:none}
@@ -98,14 +98,14 @@ main{max-width:1000px;margin:0 auto;padding:12px 16px 50px}
 .st{position:relative;overflow:hidden;color:#fff;border-radius:24px;padding:18px;background:var(--gr);box-shadow:0 14px 30px var(--sh)}
 .st::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-34px;top:-40px;background:rgba(255,255,255,.18)}
 .st .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;background:rgba(255,255,255,.25);backdrop-filter:blur(6px)}
-.st b{display:block;font:800 2.3rem/1.1 'Poppins','Noto Sans Bengali',sans-serif;margin-top:10px}
+.st b{display:block;font:800 2.3rem/1.1 'Ruposhi','Poppins','Noto Sans Bengali',sans-serif;margin-top:10px}
 .st span{opacity:.95;font-size:.88rem;font-weight:500}
 .pn{background:rgba(255,255,255,.92);border-radius:24px;padding:18px;box-shadow:0 12px 34px rgba(79,70,229,.1);margin-top:16px;backdrop-filter:blur(8px)}
 .pn h3{font-size:1.12rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .two{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:16px}
 @media(max-width:700px){.two{grid-template-columns:1fr}}
 .dn{width:170px;height:170px;display:block;margin:0 auto}
-.dn text{font:800 28px 'Poppins','Noto Sans Bengali',sans-serif;fill:var(--tx)}
+.dn text{font:800 28px 'Ruposhi','Poppins','Noto Sans Bengali',sans-serif;fill:var(--tx)}
 .dn .s{font:500 10px 'Poppins',sans-serif;fill:var(--mut)}
 .lg{display:flex;justify-content:center;gap:14px;font-size:.85rem;margin-top:8px;flex-wrap:wrap}
 .lg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
@@ -154,13 +154,16 @@ main{padding-bottom:110px}
 nav.tabs button .ti{pointer-events:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
-.nm{font-family:'Poppins','Noto Sans Bengali',sans-serif;font-size:1.07em;letter-spacing:.015em;font-variant-numeric:lining-nums tabular-nums;font-synthesis:none}
+.nm{font-family:'Ruposhi','Poppins','Noto Sans Bengali',sans-serif;font-size:1.07em;letter-spacing:.015em;font-variant-numeric:lining-nums tabular-nums;font-synthesis:none}
+input,textarea,select,button{font-family:inherit}
+@font-face{font-family:'Ruposhi';src:url('ruposhi-bangla.ttf') format('truetype');font-display:swap}
+html.rp .nm{font-weight:inherit!important;font-size:1em}
 </style>
 </head>
 <body>
 <div id="gate"></div>
 <div id="app" class="hide">
-  <header class="bar"><div class="hl"><div class="av" id="av">A</div><div><div class="hi" id="hi"></div><div class="hs"><span id="who"></span> · <a href="./">← site · v27</a></div></div></div><div class="hr"><span class="live" id="live"><i></i><b id="lv">Live</b></span><span id="lp"></span><button id="out">Log out</button></div></header>
+  <header class="bar"><div class="hl"><div class="av" id="av">A</div><div><div class="hi" id="hi"></div><div class="hs"><span id="who"></span> · <a href="./">← site · v28</a></div></div></div><div class="hr"><span class="live" id="live"><i></i><b id="lv">Live</b></span><span id="lp"></span><button id="out">Log out</button></div></header>
   <nav class="tabs" id="tabs"></nav>
   <main id="main"></main>
 </div>
@@ -179,6 +182,7 @@ const first=()=>wrap(document.body);document.readyState==='loading'?document.add
 window.__nm=wrap;
 })();
 </script>
+<script>try{document.fonts&&document.fonts.load('16px Ruposhi','ক0A').then(f=>{if(f&&f.length)document.documentElement.classList.add('rp')}).catch(()=>{})}catch(e){}</script>
 <script>
 (()=>{
 const C=()=>{const c=window.CLOUD;return c&&c.url&&c.key?c:null},LS=localStorage,$=id=>document.getElementById(id);
@@ -215,7 +219,7 @@ function gate(){const e0=($('ge')||{}).value||'',fx=[['🛡️','7%','16%','0s']
  <div class="card"><div class="top"><h2>${t('si')}</h2>${pill()}</div><p class="mut" style="margin:0 0 6px">${t('sub')}</p>
  <div class="fd"><span class="ic">✉️</span><input id="ge" type="email" placeholder="${t('em')}" aria-label="${t('em')}" autocomplete="email" value="${esc(e0)}"></div>
  <div class="fd"><span class="ic">🔒</span><input id="gp" type="password" placeholder="${t('pw')}" aria-label="${t('pw')}" autocomplete="current-password"><button type="button" class="ey" data-eye aria-label="show">👁</button></div>
- <button id="gb" class="go">${t('go')}</button><p class="msg" id="gm">${esc(gMsg)}</p><div class="back"><a href="./">← Learner site · v27</a></div></div></div>`}
+ <button id="gb" class="go">${t('go')}</button><p class="msg" id="gm">${esc(gMsg)}</p><div class="back"><a href="./">← Learner site · v28</a></div></div></div>`}
 async function signin(){const em=$('ge').value.trim(),pw=$('gp').value;if(!em||!pw)return;if(!C()){gMsg='⚠ '+t('nc');gate();return}
  const m=$('gm');m.style.color='';m.textContent=t('wait');$('gb').disabled=true;
  try{const j=await api('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email:em,password:pw})},false);setS(j);
